@@ -64,7 +64,7 @@ function Navbar() {
           <Typography
             variant="body1"
             component="a"
-            href="home"
+            href="/"
             sx={styles.link}
           >
             Home
