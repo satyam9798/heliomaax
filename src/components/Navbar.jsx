@@ -72,7 +72,7 @@ function Navbar() {
           <Typography
             variant="body1"
             component="a"
-            href="product"
+            href="products"
             sx={styles.link}
           >
             Product
@@ -124,6 +124,8 @@ function Navbar() {
                 backgroundColor: "#6CCD85",
               },
             }}
+            onSubmit={()=>{}}
+            href="/get-quote"
           >
             Get Quote
           </Button>

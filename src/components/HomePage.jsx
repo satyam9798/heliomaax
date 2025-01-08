@@ -15,10 +15,6 @@ import {
 } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
-import HomeIcon from "@mui/icons-material/Home";
-import BoltIcon from "@mui/icons-material/Bolt";
-import NatureIcon from "@mui/icons-material/Nature";
-import PowerIcon from "@mui/icons-material/Power";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import "../styles/Home.css";
@@ -26,10 +22,6 @@ import Image1 from "../assets/image1.jpeg";
 import Image2 from "../assets/image2.jpg";
 import Image3 from "../assets/image3.jpg";
 import Image4 from "../assets/waterFarmer.jpg";
-import Tool1 from "../assets/tool1.png";
-import Tool2 from "../assets/tool2.png";
-import Tool3 from "../assets/tool3.png";
-import Tool4 from "../assets/tool4.png";
 import Offgrid from "../assets/offgrid.png";
 import Ongrid from "../assets/ongrid.png";
 import Hybrid from "../assets/hybrid.png";
@@ -171,6 +163,7 @@ export default function Home() {
           </>
         ))}
       </Carousel>
+      <Box sx={{ backgroundColor: "#F2FDF5" }}>
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <Box mb={8}>
           <Grid container spacing={4} alignItems="center">
@@ -434,6 +427,7 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
+      </Box>
       </Box>
     </div>
   );

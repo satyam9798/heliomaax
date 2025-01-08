@@ -96,7 +96,7 @@ const ContactUs = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5"}}>
+    <Box sx={{ backgroundColor: "#F2FDF5" }}>
       <Box
         sx={{
           position: "relative",
