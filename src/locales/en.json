@@ -1,0 +1,25 @@
+{
+    "carousel": [
+      {
+        "image": "Image4",
+        "title": "PM Kusum 'A' Yojana",
+        "description": "Pradhan Mantri Kisan Urja Suraksha evam Uthhan Mahabhiyan."
+      },
+      {
+        "image": "Image2",
+        "title": "Powering your Future with Sustainable Energy",
+        "description": "Harness the Sun, Save the Planet."
+      },
+      {
+        "image": "Bijli",
+        "title": "PM Surya Ghar: Muft Bijli Yojana",
+        "description": "Goverment Scheme that aims to provide free electricity to households in India."
+      },
+      {
+        "image": "Image4",
+        "title": "PM Kusum 'B' Yojana",
+        "description": "Mukhyamantri Solar Pump Yojana."
+      }
+    ]
+  }
+  
