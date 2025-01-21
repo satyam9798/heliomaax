@@ -6,7 +6,6 @@ import {
   TextField,
   Button,
   FormControl,
-  FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
@@ -20,6 +19,7 @@ import { useTheme, useMediaQuery } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import Image2 from "../assets/image1.jpeg";
 import QuoteImg from "../assets/getQuote.png";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Quote = () => {
   const theme = useTheme();
@@ -164,9 +164,9 @@ const Quote = () => {
           <Grid item xs={12} sm={6} sx={{ margin: "auto" }}>
             <Box sx={{}}>
               <CardMedia
-                component="img"
+                component='img'
                 image={QuoteImg}
-                alt="Get Quote"
+                alt='Get Quote'
                 sx={{
                   borderRadius: "10px",
                   maxWidth: "45rem",
@@ -179,7 +179,7 @@ const Quote = () => {
             <form noValidate>
               <Box sx={{ marginBottom: "20px" }}>
                 <Typography
-                  component="label"
+                  component='label'
                   sx={{
                     fontWeight: "bold",
                     display: "block",
@@ -189,9 +189,9 @@ const Quote = () => {
                   Name <span style={{ color: "red" }}>*</span>
                 </Typography>
                 <TextField
-                  variant="outlined"
+                  variant='outlined'
                   fullWidth
-                  name="name"
+                  name='name'
                   value={formData.name}
                   onChange={handleInputChange}
                   error={!!errors.name}
@@ -202,15 +202,15 @@ const Quote = () => {
 
               <Box sx={{ marginBottom: "20px" }}>
                 <Typography
-                  component="label"
+                  component='label'
                   sx={{ fontWeight: "bold", display: "block" }}
                 >
                   Phone <span style={{ color: "red" }}>*</span>
                 </Typography>
                 <TextField
-                  variant="outlined"
+                  variant='outlined'
                   fullWidth
-                  name="phone"
+                  name='phone'
                   value={formData.phone}
                   onChange={handleInputChange}
                   error={!!errors.phone}
@@ -221,15 +221,15 @@ const Quote = () => {
 
               <Box sx={{ marginBottom: "20px" }}>
                 <Typography
-                  component="label"
+                  component='label'
                   sx={{ fontWeight: "bold", display: "block" }}
                 >
                   Email <span style={{ color: "red" }}>*</span>
                 </Typography>
                 <TextField
-                  variant="outlined"
+                  variant='outlined'
                   fullWidth
-                  name="email"
+                  name='email'
                   value={formData.email}
                   onChange={handleInputChange}
                   error={!!errors.email}
@@ -240,7 +240,7 @@ const Quote = () => {
 
               <Box sx={{ marginBottom: "20px" }}>
                 <Typography
-                  component="label"
+                  component='label'
                   sx={{ fontWeight: "bold", display: "block" }}
                 >
                   Property Type <span style={{ color: "red" }}>*</span>
@@ -251,20 +251,20 @@ const Quote = () => {
                       <Checkbox
                         checked={formData.propertyType.residential}
                         onChange={handleCheckboxChange}
-                        name="residential"
+                        name='residential'
                       />
                     }
-                    label="Residential"
+                    label='Residential'
                   />
                   <FormControlLabel
                     control={
                       <Checkbox
                         checked={formData.propertyType.commercial}
                         onChange={handleCheckboxChange}
-                        name="commercial"
+                        name='commercial'
                       />
                     }
-                    label="Commercial"
+                    label='Commercial'
                   />
                 </FormControl>
                 {errors.propertyType && (
@@ -276,7 +276,7 @@ const Quote = () => {
 
               <Box sx={{ marginBottom: "20px" }}>
                 <Typography
-                  component="label"
+                  component='label'
                   sx={{ fontWeight: "bold", display: "block" }}
                 >
                   Preferred Contact Method{" "}
@@ -285,19 +285,19 @@ const Quote = () => {
                 <FormControl>
                   <RadioGroup
                     row
-                    name="contactMethod"
+                    name='contactMethod'
                     value={formData.contactMethod}
                     onChange={handleInputChange}
                   >
                     <FormControlLabel
-                      value="phone"
+                      value='phone'
                       control={<Radio />}
-                      label="Phone"
+                      label='Phone'
                     />
                     <FormControlLabel
-                      value="email"
+                      value='email'
                       control={<Radio />}
-                      label="Email"
+                      label='Email'
                     />
                   </RadioGroup>
                 </FormControl>
@@ -310,7 +310,7 @@ const Quote = () => {
 
               <Box sx={{ marginBottom: "20px" }}>
                 <Typography
-                  component="label"
+                  component='label'
                   sx={{ fontWeight: "bold", display: "block" }}
                 >
                   Power Requirement <span style={{ color: "red" }}>*</span>
@@ -318,13 +318,12 @@ const Quote = () => {
                 <Select
                   fullWidth
                   value={formData.powerRequirement}
-                  name="powerRequirement"
+                  name='powerRequirement'
                   onChange={handleInputChange}
                   displayEmpty
                   inputProps={{
                     style: {
                       borderRadius: "20px",
-
                     },
                   }}
                   sx={{
@@ -343,12 +342,12 @@ const Quote = () => {
                     },
                   }}
                 >
-                  <MenuItem value="" disabled>
+                  <MenuItem value='' disabled>
                     Select Power Requirement
                   </MenuItem>
-                  <MenuItem value="1kw-3kw">1kw-3kw</MenuItem>
-                  <MenuItem value="3kw-6kw">3kw-6kw</MenuItem>
-                  <MenuItem value="6kw and above">6kw and above</MenuItem>
+                  <MenuItem value='1kw-3kw'>1kw-3kw</MenuItem>
+                  <MenuItem value='3kw-6kw'>3kw-6kw</MenuItem>
+                  <MenuItem value='6kw and above'>6kw and above</MenuItem>
                 </Select>
                 {errors.powerRequirement && (
                   <Typography sx={{ color: "red", fontSize: "0.8rem" }}>
@@ -357,13 +356,31 @@ const Quote = () => {
                 )}
               </Box>
 
-              <Button
+              {/* <Button
                 variant="contained"
                 color="primary"
                 fullWidth
                 onClick={handleSubmit}
               >
                 Submit
+              </Button> */}
+              <Button
+                onClick={handleSubmit}
+                variant='contained'
+                sx={{
+                  backgroundColor: "#80ED99",
+                  width: "8rem",
+                  margin: "auto",
+                  color: "#000000",
+                  fontWeight: "700",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#6CCD85",
+                  },
+                }}
+              >
+                submit
+                <MdKeyboardArrowRight />
               </Button>
             </form>
           </Grid>

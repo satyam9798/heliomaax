@@ -3,18 +3,7 @@ import {
   Grid,
   Box,
   Typography,
-  TextField,
   Button,
-  FormControl,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-  Checkbox,
-  MenuItem,
-  Select,
-  CardMedia,
-  Divider,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/material";
 
@@ -28,6 +17,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Product = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
 
   const content = [
     {
@@ -85,7 +76,6 @@ const Product = () => {
     },
   ];
 
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box sx={{ backgroundColor: "#F2FDF5" }}>
@@ -257,11 +247,13 @@ const Product = () => {
               display: "flex",
               justifyContent: "space-around",
               // marginleft:'auto'
+              marginLeft:isMobile?'1rem':'0rem',
+              marginRight:isMobile?'1rem':'0rem',
             }}
           >
             <Box>
               <Typography
-                variant='h6'
+                variant={isMobile?'body1': 'h6'}
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
@@ -315,8 +307,8 @@ const Product = () => {
           sx={{
             width: "80vw",
             maxWidth: "80vw",
-            margin: "auto",
-            padding: "20px",
+            margin:isMobile?'0': "auto",
+            padding:isMobile?'0': "20px",
           }}
         >
           <Typography
@@ -356,8 +348,8 @@ const Product = () => {
                   container
                   spacing={4}
                   direction='column'
-                  // alignItems="center"
-                  // justifyContent="center"
+                  alignItems="center"
+                  justifyContent="center"
                 >
                   {/* Image Section */}
                   <Grid item xs={12}>
@@ -368,7 +360,7 @@ const Product = () => {
                       sx={{
                         width: "100%",
                         borderRadius: "10px",
-                        maxWidth: "85rem",
+                        maxWidth: isMobile? '75rem': "85rem",
                         margin: "auto",
                       }}
                     />
@@ -383,7 +375,7 @@ const Product = () => {
                       }}
                     >
                       <Typography
-                        variant='h4'
+                        variant= {isMobile?'body1': 'h4'}
                         sx={{
                           fontWeight: "bold",
                           marginBottom: "10px",

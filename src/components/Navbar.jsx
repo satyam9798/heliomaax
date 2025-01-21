@@ -1,10 +1,36 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
 import Icon from "../assets/icon.png";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useMediaQuery
+} from "@mui/material";import LanguageIcon from "@mui/icons-material/Language";
+import MenuIcon from "@mui/icons-material/Menu";
+
+import { useLanguage } from "../context/LanguageContext.js";
+import i18n from "../i18n";
+
+
 
 function Navbar() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
+
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, changeLanguage } = useLanguage();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,20 +41,24 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLanguageClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleLanguageClose = (lang) => {
+    if (lang) {
+      changeLanguage(lang);
+      i18n.changeLanguage(lang);
+      localStorage.setItem("language", lang); 
+    }
+    setAnchorEl(null);
+  };
+
+  const toggleDrawer = (open) => () => {
+    setDrawerOpen(open);
+  };
+
   return (
-    // <nav className={scrolled ? "navbar navbar-scrolled" : "navbar"}>
-    //   <div className="navbar-container">
-    //     <Link to="/" ><img className="navbar-logo" src={Icon} alt="heliomaax"/></Link>
-    //     <div className="navbar-links">
-    //       <Link to="/">Home</Link>
-    //       <Link to="/products">Products</Link>
-    //       <Link to="/services">Services</Link>
-    //       <Link to="/about-us">About Us</Link>
-    //       <Link to="/contact-us">Contact Us</Link>
-    //       <Link to="/get-quote">Get Quote</Link>
-    //     </div>
-    //   </div>
-    // </nav>
     <AppBar
       position="fixed"
       sx={{
@@ -40,7 +70,7 @@ function Navbar() {
       <Toolbar
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "flex-end",
           alignItems: "center",
         }}
       >
@@ -48,74 +78,38 @@ function Navbar() {
           <img
             src={Icon}
             alt="Logo"
-            style={{ maxWidth: "15rem", maxHeight: "50px" }}
+            style={{ maxWidth:isMobile?'10rem': "15rem", maxHeight: "50px" }}
           />
         </Box>
 
         <Box
           sx={{
-            display: "flex",
-            width: "30%",
+            display: { xs: "none", md: "flex" },
+            // width: "100%",
             justifyContent: "space-between",
-            //   flexGrow: 1,
+              flexGrow: 1,
             marginLeft: "16px",
           }}
         >
-          <Typography
-            variant="body1"
-            component="a"
-            href="/"
-            sx={styles.link}
-          >
+         <Typography variant="body1" component="a" href="/" sx={styles.link}>
             Home
           </Typography>
-          <Typography
-            variant="body1"
-            component="a"
-            href="products"
-            sx={styles.link}
-          >
+          <Typography variant="body1" component="a" href="/products" sx={styles.link}>
             Product
           </Typography>
-          <Typography
-            variant="body1"
-            component="a"
-            href="services"
-            sx={styles.link}
-          >
+          <Typography variant="body1" component="a" href="/services" sx={styles.link}>
             Services
           </Typography>
-          <Typography
-            variant="body1"
-            component="a"
-            href="about-us"
-            sx={styles.link}
-          >
+          <Typography variant="body1" component="a" href="/about-us" sx={styles.link}>
             About Us
           </Typography>
-
-          <Typography
-            variant="body1"
-            component="a"
-            href="contact-us"
-            sx={styles.link}
-          >
+          <Typography variant="body1" component="a" href="/contact-us" sx={styles.link}>
             Contact Us
           </Typography>
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            width: "15%",
-            justifyContent: "space-between",
-            //   flexGrow: 1,
-            marginLeft: "16px",
-          }}
-        >
           <Button
             variant="contained"
             sx={{
+              mx:'2.5rem',
               backgroundColor: "#80ED99",
               color: "#000000",
               fontWeight:'700',
@@ -130,6 +124,80 @@ function Navbar() {
             Get Quote
           </Button>
         </Box>
+
+        <Box
+          sx={{
+            // display: "flex",
+            width:isMobile?'50%': "15%",
+            justifyContent: "space-between",
+              // flexGrow: 1,
+            marginLeft: "16px",
+          }}
+        >
+        
+         
+          <IconButton
+            onClick={handleLanguageClick}
+            sx={{ color: "white" }}
+          >
+            <LanguageIcon />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={() => handleLanguageClose()}
+          >
+            <MenuItem onClick={() => handleLanguageClose("en")}>
+              English
+            </MenuItem>
+            <MenuItem onClick={() => handleLanguageClose("hi")}>हिंदी</MenuItem>
+          </Menu>
+        </Box>
+         {/* Hamburger Menu */}
+         <IconButton
+          // edge="start"
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer(true)}
+          sx={{ display: { xs: "block", md: "none" }, paddingRight:'1.5rem' }}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        {/* Drawer */}
+        <Drawer
+          anchor="right"
+          open={drawerOpen}
+          onClose={toggleDrawer(false)}
+        >
+          <Box
+            sx={{
+              width: 250,
+              padding: 2,
+            }}
+            role="presentation"
+            onClick={toggleDrawer(false)}
+            onKeyDown={toggleDrawer(false)}
+          >
+            <List>
+              <ListItem button component="a" href="/">
+                <ListItemText primary="Home" />
+              </ListItem>
+              <ListItem button component="a" href="/products">
+                <ListItemText primary="Product" />
+              </ListItem>
+              <ListItem button component="a" href="/services">
+                <ListItemText primary="Services" />
+              </ListItem>
+              <ListItem button component="a" href="/about-us">
+                <ListItemText primary="About Us" />
+              </ListItem>
+              <ListItem button component="a" href="/contact-us">
+                <ListItemText primary="Contact Us" />
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
       </Toolbar>
     </AppBar>
   );
