@@ -77,21 +77,21 @@ const bankContent = [
     description:
       "Our experts assess your financial profile to determine eligibility and recommend the best loan options for your solar project.",
     image: HelpEligible,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
   },
   {
     title: "Documentation Support",
     description:
       "From preparing loan applications to submitting required paperwork, we assist you at every step, making the financing process smooth.",
     image: HelpDocument,
-    bgColor: "#ABFDFF",
+    bgColor: "#CBFFD9",
   },
   {
     title: "Expedited Approvals",
     description:
       "With our strong relationships with financial institutions, we help expedite loan approvals so you can kick-start your solar journey without delays.",
     image: HelpApproval,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
   },
 ];
 
@@ -116,33 +116,33 @@ const discomContent = [
     image: HelpDocument,
     bgColor: "#ABFDFF",
   },
-  {
-    title: "Liaison with DISCOM",
-    description:
-      "We act as your representative, coordinating directly with DISCOM officials to address any queries, expedite approvals, and avoid unnecessary delays.",
-    image: HelpGuidance,
-    bgColor: "#CBFFD9",
-  },
+  // {
+  //   title: "Liaison with DISCOM",
+  //   description:
+  //     "We act as your representative, coordinating directly with DISCOM officials to address any queries, expedite approvals, and avoid unnecessary delays.",
+  //   image: HelpGuidance,
+  //   bgColor: "#CBFFD9",
+  // },
   {
     title: "Net Metering Applications",
     description:
       "For grid-connected solar systems, we help you apply for net metering, enabling you to export excess energy to the grid and earn credits or payments.",
     image: HelpApproval,
-    bgColor: "#ABFDFF",
+    bgColor: "#CBFFD9",
   },
-  {
-    title: "Compliance with Regulations",
-    description:
-      "Our experts ensure your solar system meets all technical and safety standards set by DISCOM, preventing potential rejections or penalties.",
-    image: HelpTransperancy,
-    bgColor: "#ABFDFF",
-  },
+  // {
+  //   title: "Compliance with Regulations",
+  //   description:
+  //     "Our experts ensure your solar system meets all technical and safety standards set by DISCOM, preventing potential rejections or penalties.",
+  //   image: HelpTransperancy,
+  //   bgColor: "#ABFDFF",
+  // },
   {
     title: "End-to-End Support",
     description:
       "From application submission to approval receipt, we stay by your side, providing updates and resolving any challenges that arise during the process.",
     image: HelpApproval,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
   },
 ];
 
@@ -159,7 +159,7 @@ const installationData = [
     type: "Installation",
     title: "Professional Installation",
     image: Support,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
     description:
       "Expert technicians install the solar panels, inverters, and other components.",
   },
@@ -175,7 +175,7 @@ const installationData = [
     type: "Maintenance",
     title: "Customer",
     image: Customer,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
     description:
       "Hands-on guidance to help you understand system operation, monitoring, and maintenance for optimal usage.",
   },
@@ -191,7 +191,7 @@ const installationData = [
     type: "Maintenance",
     title: "Cleaning Services",
     image: Cleaning,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
     description:
       "Removal of dust, dirt, and debris from solar panels to maintain maximum energy generation.",
   },
@@ -207,7 +207,7 @@ const installationData = [
     type: "Maintenance",
     title: "System Upgrades",
     image: SystemUpgrade,
-    bgColor: "#CBFFD9",
+    bgColor: "#ABFDFF",
     description:
       "Implementation of upgrades to enhance system performance or adapt to changing energy needs.",
   },
@@ -315,7 +315,7 @@ const Services = () => {
         }}
       >
         <Typography
-          variant={isMobile?'h4':'h3'}
+          variant={isMobile ? "h4" : "h3"}
           component='h2'
           fontWeight='bold'
           gutterBottom
@@ -420,7 +420,7 @@ const Services = () => {
         }}
       >
         <Typography
-          variant={isMobile?'h4':'h3'}
+          variant={isMobile ? "h4" : "h3"}
           component='h2'
           fontWeight='bold'
           gutterBottom
@@ -656,25 +656,28 @@ const Services = () => {
             <Grid
               item
               key={index}
-              xs={isMobile ? 12 : 4}
-              sm={6}
-              md={4}
-              lg={4} // Adjust size for larger screens
+              // xs={isMobile ? 12 : 4}
+              // sm={6}
+              // md={4}
+              // lg={4} // Adjust size for larger screens
             >
               <Box
                 sx={{
                   // margin:'2rem',
+                  width:'15.5rem',
+                  height:'15.5rem',
                   backgroundColor: item.bgColor,
-                  borderRadius: "0.5rem",
-                  padding: "1rem",
+                  borderRadius: "25px",
+                  padding: "2rem",
                   textAlign: "center",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                  height: "200px",
-                  minWidth: "150px",
+                  // height: "150px", // Ensure square shape
+                  boxShadow: "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                  // boxShadow: "rgba(100, 100, 111, 0.15) 8.95px 5.95px 1.6px;",
+                  // minWidth: "150px",
                   transition: "transform 0.3s ease",
                   "&:hover": {
                     transform: "scale(1.05)",
@@ -694,7 +697,7 @@ const Services = () => {
                 <Typography variant='h6' fontWeight='bold'>
                   {item.title}
                 </Typography>
-                <Typography variant='body2' color='text.secondary'>
+                <Typography variant='body2' color='text.secondary' fontSize={16}>
                   {item.description}
                 </Typography>
               </Box>
@@ -823,31 +826,35 @@ const Services = () => {
           spacing={3}
           justifyContent='center'
           alignItems='center'
-          sx={{ padding: "2rem" }}
+          sx={{ padding: "2rem"}}
         >
           {discomContent.map((item, index) => (
             <Grid
               item
+              gap={0}
               key={index}
-              xs={isMobile ? 12 : 4}
-              sm={6}
-              md={4}
-              lg={4} // Adjust size for larger screens
+              // xs={isMobile ? 12 : 4}
+              // sm={6}
+              // md={4}
+              // lg={4} // Adjust size for larger screens
             >
               <Box
                 sx={{
                   // margin:'2rem',
+                  width:'15.5rem',
+                  height:'15.5rem',
                   backgroundColor: item.bgColor,
-                  borderRadius: "0.5rem",
-                  padding: "1rem",
+                  borderRadius: "25px",
+                  padding: "2rem",
                   textAlign: "center",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                  height: "200px",
-                  minWidth: "150px",
+                  // height: "150px", // Ensure square shape
+                  boxShadow: "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                  // boxShadow: "rgba(100, 100, 111, 0.15) 8.95px 5.95px 1.6px;",
+                  // minWidth: "150px",
                   transition: "transform 0.3s ease",
                   "&:hover": {
                     transform: "scale(1.05)",
@@ -867,7 +874,7 @@ const Services = () => {
                 <Typography variant='h6' fontWeight='bold'>
                   {item.title}
                 </Typography>
-                <Typography variant='body2' color='text.secondary'>
+                <Typography variant='body2' color='text.secondary' fontSize={16}>
                   {item.description}
                 </Typography>
               </Box>
@@ -887,7 +894,7 @@ const Services = () => {
           <Typography variant='h4' fontWeight='bold'>
             Installation and Maintenance Services
           </Typography>
-          <Box sx={{my:'1rem', alignSelf:'flex-end'}}>
+          <Box sx={{ my: "1rem", alignSelf: "flex-end" }}>
             <Button
               onClick={scrollLeft}
               variant='contained'
