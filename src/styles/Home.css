@@ -1,14 +1,7 @@
 .home-container {
-  margin-top: 0;
-  text-align: center;
   background-color: "#F2FDF5";
 }
 
-.carousel-container {
-  position: relative;
-  width: 100vw;
-  /* height: 85vh; */
-}
 
 .carousel-slide {
   display: flex;
@@ -20,7 +13,6 @@
   background-size: cover;
   background-position: center;
   color: white;
-  position: relative;
   filter: brightness(0.4);
 }
 

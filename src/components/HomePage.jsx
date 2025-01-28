@@ -33,6 +33,10 @@ import HelpDocument from "../assets/helpDocument.png";
 import HelpApproval from "../assets/helpApproval.png";
 import HelpGuidance from "../assets/helpGuidance.png";
 import HelpTransperancy from "../assets/helpTransperancy.png";
+import Tool1 from "../assets/tool1.png";
+import Tool2 from "../assets/tool2.png";
+import Tool3 from "../assets/tool3.png";
+import Tool4 from "../assets/tool4.png";
 
 const carouselItems = [
   {
@@ -57,40 +61,38 @@ const carouselItems = [
     description: "Mukhyamantri Solar Pump Yojana.",
   },
 ];
-
 const benefits = [
   {
-    title:
-      "Send extra energy to the grid and get credited directly into your account.",
+    title: "Get credited directly into your account for extra energy",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus.",
-    image: Kusum,
-    bgColor: "#CBFFD9", // light green
-    borderColor: "#166534", // darker green
+      "Generate more energy than you use and get rewarded by having the extra energy credited to your account. This ensures maximum utilization of your solar investment while earning additional benefits.",
+    image: Tool3,
+    bgColor: "#CBFFD9",
+    borderColor: "#90EE90",
   },
   {
     title: "Reduced electricity bills.",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus.",
-    image: Bijli,
-    bgColor: "#ABFDFF", // light blue
-    borderColor: "#075985", // darker blue
+      "By switching to solar energy, you can significantly lower your monthly electricity expenses. Solar panels provide a cost-effective solution by harnessing free energy from the sun.",
+    image: Tool2,
+    bgColor: "#ABFDFF",
+    borderColor: "#38A3A5",
   },
   {
     title: "Environmentally friendly and sustainable.",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus.",
-    image: Image2,
+      "Solar energy is clean, renewable, and helps reduce your carbon footprint. By choosing solar, you're contributing to a healthier planet and a sustainable future for generations to come.",
+    image: Tool4,
     bgColor: "#CBFFD9",
-    borderColor: "#166534",
+    borderColor: "#90EE90",
   },
   {
     title: "Energy independence and reliability.",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus.",
-    image: Image4,
+      "Solar power allows you to reduce dependency on traditional energy sources, giving you greater control over your energy supply. It’s a reliable and sustainable way to power your home or business.",
+    image: Tool1,
     bgColor: "#ABFDFF",
-    borderColor: "#075985",
+    borderColor: "#38A3A5",
   },
 ];
 
@@ -99,28 +101,28 @@ const featuredServices = [
     image: Offgrid,
     title: "Rooftop Solar Installations",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus. Est sed pulvinar morbi dolor in gravida enim amet sit. Cum mi accumsan faucibus habitasse sit semper porttitor nisl porttitor. ",
+      "Transform your rooftop into a source of clean, renewable energy. Our rooftop solar installations are tailored to maximize energy generation while blending seamlessly with your space, helping you save on electricity bills and contribute to a greener planet.",
     bgColor: "#ABFDFF",
   },
   {
     image: Ongrid,
     title: "On Grid System",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus. Est sed pulvinar morbi dolor in gravida enim amet sit. Cum mi accumsan faucibus habitasse sit semper porttitor nisl porttitor. ",
+      "Connect your solar system directly to the utility grid to reduce dependency on traditional energy sources. With an on-grid system, you can enjoy lower electricity costs while feeding surplus energy back to the grid for additional benefits.",
     bgColor: "#CBFFD9",
   },
   {
     image: Offgrid,
     title: "Off Grid System",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus. Est sed pulvinar morbi dolor in gravida enim amet sit. Cum mi accumsan faucibus habitasse sit semper porttitor nisl porttitor. ",
+      "Achieve complete energy independence with an off-grid solar system. This system stores solar energy in batteries, ensuring a reliable power supply even in remote areas or during power outages, providing unmatched reliability and sustainability.",
     bgColor: "#ABFDFF",
   },
   {
     image: Hybrid,
     title: "Hybrid System",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida felis. Felis scelerisque gravida scelerisque nunc leo. Risus suscipit risus mattis aliquet luctus magna tellus nulla risus. Est sed pulvinar morbi dolor in gravida enim amet sit. Cum mi accumsan faucibus habitasse sit semper porttitor nisl porttitor. ",
+      "Combine the benefits of on-grid and off-grid systems with a hybrid solar solution. This system allows you to store excess energy in batteries while staying connected to the grid for additional flexibility and efficiency.",
     bgColor: "#CBFFD9",
   },
 ];
@@ -242,29 +244,65 @@ export default function Home() {
         ))}
       </Carousel>
       <Box sx={{ backgroundColor: "#F2FDF5" }}>
-        <Container maxWidth='lg' sx={{ py: 6 }}>
+        <Box
+          sx={{ py: 6, maxWidth: isMobile ? "100vw" : "85vw", margin: "auto" }}
+        >
           <Box mb={8}>
-            <Grid container spacing={4} alignItems='center'>
+            <Grid
+              alignItems='center'
+              sx={{
+                display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+              }}
+            >
               <Grid item xs={12} md={6}>
-                <HeroImage src={Image4} alt='Solar panel installation' />
+                <Box
+                  sx={{
+                    width: isMobile ? "15rem" : "40rem",
+                    height: isMobile ? "15rem" : "20rem",
+                    backgroundImage: `url(${Image4})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    margin: "auto",
+                    borderRadius: "10px",
+                    padding: isMobile ? "1rem" : "2rem",
+                  }}
+                  alt='Solar panel installation'
+                />
               </Grid>
-              <Grid item xs={12} md={6}>
-                <Typography variant='overline' color='primary' gutterBottom>
-                  {t("ABOUT COMPANY")}
-                </Typography>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                sx={{
+                  mx: "2rem",
+                  height: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                }}
+              >
                 <Typography
-                  variant='h3'
-                  component='h1'
+                  variant='h5'
+                  color='#22577A'
                   fontWeight='bold'
                   gutterBottom
+                  sx={{
+                    my: "1rem",
+                  }}
                 >
-                  Lorem ipsum dolor sit amet consectetur.
+                  {t("ABOUT COMPANY")}
                 </Typography>
                 <Typography variant='body1' color='text.secondary'>
-                  Lorem ipsum dolor sit amet consectetur. Faucibus vel sem
-                  gravida felis. Felis scelerisque gravida scelerisque nunc leo.
-                  Risus suscipit risus mattis aliquet luctus magna tellus nulla
-                  risus.
+                  We help individuals and businesses install solar panels easily
+                  and affordably using government schemes. Our mission is to
+                  make renewable energy accessible to everyone, reducing
+                  electricity costs and protecting the environment. With a focus
+                  on quality, we provide end-to-end support, from consultation
+                  to installation. Our team ensures you get the best benefits
+                  from government subsidies and schemes. Join us in creating a
+                  greener and sustainable future for all.
                 </Typography>
               </Grid>
             </Grid>
@@ -277,7 +315,8 @@ export default function Home() {
               alignItems: "center",
               gap: "20px",
               margin: "20px 0",
-              flexDirection: isMobile? 'column' : 'row'
+              flexDirection: isMobile ? "column" : "row",
+              mx: "2rem",
             }}
           >
             {/* mission and values */}
@@ -285,9 +324,23 @@ export default function Home() {
               sx={{
                 flex: 1,
                 backgroundColor: "#CBFFD9",
-                borderRadius:isMobile? '0' :  "500px 0 0 500px",
-                padding: "40px",
+                borderRadius: isMobile ? "0" : "500px 0 0 500px",
+                padding: "3rem",
                 boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                height: isMobile ? "10rem" : "12rem",
+                ...(isMobile
+                  ? {
+                      width: "15.5rem",
+                      height: "15.5rem",
+                      borderRadius: "25px",
+                      padding: "2rem",
+                      boxShadow:
+                        "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                    }
+                  : {
+                      height: "12rem",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                    }),
               }}
             >
               <Typography
@@ -295,7 +348,7 @@ export default function Home() {
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
-                  textAlign: "left",
+                  textAlign: "center",
                 }}
               >
                 Mission
@@ -304,11 +357,12 @@ export default function Home() {
                 variant='body1'
                 sx={{ marginBottom: "10px", textAlign: "left" }}
               >
-                Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida
-                felis. Felis scelerisque gravida scelerisque nunc leo. Risus
-                suscipit risus mattis aliquet luctus magna tellus nulla risus.
-                Est sed pulvinar morbi dolor in gravida enim amet sit. Cum mi
-                accumsan faucibus habitasse sit semper porttitor nisl porttitor.
+                We aim to simplify the adoption of solar energy through
+                government schemes, reducing dependency on non-renewable
+                resources. By delivering reliable solutions and exceptional
+                service, we strive to lower energy costs for households and
+                businesses. Together, we are building a sustainable tomorrow,
+                one solar panel at a time.
               </Typography>
             </Box>
 
@@ -316,9 +370,23 @@ export default function Home() {
               sx={{
                 flex: 1,
                 backgroundColor: "#ABFDFF",
-                borderRadius:isMobile? '0' :  "0 500px 500px 0",
-                padding: "40px",
+                borderRadius: isMobile ? "0" : " 0 500px 500px 0",
+                padding: "3rem",
                 boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                height: isMobile ? "10rem" : "12rem",
+                ...(isMobile
+                  ? {
+                      width: "15.5rem",
+                      height: "15.5rem",
+                      borderRadius: "25px",
+                      padding: "2rem",
+                      boxShadow:
+                        "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                    }
+                  : {
+                      height: "12rem",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                    }),
               }}
             >
               <Typography
@@ -326,7 +394,7 @@ export default function Home() {
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
-                  textAlign: "left",
+                  textAlign: "center",
                 }}
               >
                 Values
@@ -335,16 +403,15 @@ export default function Home() {
                 variant='body1'
                 sx={{ marginBottom: "10px", textAlign: "left" }}
               >
-                Lorem ipsum dolor sit amet consectetur. Faucibus vel sem gravida
-                felis. Felis scelerisque gravida scelerisque nunc leo. Risus
-                suscipit risus mattis aliquet luctus magna tellus nulla risus.
-                Est sed pulvinar morbi dolor in gravida enim amet sit. Cum mi
-                accumsan faucibus habitasse sit semper porttitor nisl porttitor.
+                We believe in sustainability, innovation, and integrity as the
+                foundation of our work. We value collaboration, working closely
+                with clients and communities to achieve shared goals. At the
+                heart of our company is a passion for creating lasting
+                environmental and economic impact through renewable energy.
               </Typography>
             </Box>
           </Box>
-
-          {/* <Box sx={{ textAlign: isMobile ? "center" : "left" }}>
+          <Box sx={{ textAlign: "center", my: "3rem" }}>
             <Typography
               variant='h4'
               component='h2'
@@ -359,80 +426,6 @@ export default function Home() {
               autoPlay={true}
               interval={5000}
               animation='slide'
-              navButtonsAlwaysVisible={true}
-              // indicators={false}
-            >
-              {benefits.map((benefit, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    backgroundColor: benefit.bgColor,
-                    height: isMobile ? "25rem" : "10rem",
-                    borderRadius: isMobile ? "1rem" : "20rem",
-                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                    overflow: "hidden",
-                    display: "flex",
-                    flexDirection: isMobile ? "column" : "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: isMobile ? "1rem" : "0rem",
-                  }}
-                >
-                  <Box sx={{}}>
-                    <Box
-                      sx={{
-                        flexShrink: 0,
-                        width: isMobile ? "250px" : "10rem",
-                        height: isMobile ? "250px" : "10rem",
-                        borderRadius: isMobile ? "1rem" : "50%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginRight: isMobile ? "1rem" : "1rem",
-                        backgroundImage: `url(${benefit.image})`,
-                      }}
-                    ></Box>
-                  </Box>
-                  <CardContent
-                    sx={{
-                      textAlign: isMobile ? "center" : "left",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: isMobile ? "center" : "flex-start",
-                    }}
-                  >
-                    <Typography
-                      variant='h6'
-                      gutterBottom
-                      fontWeight='bold'
-                      sx={{ textAlign: isMobile ? "center" : "left" }}
-                    >
-                      {benefit.title}
-                    </Typography>
-                    <Typography variant='body2' color='text.secondary'>
-                      {benefit.description}
-                    </Typography>
-                  </CardContent>
-                </Box>
-              ))}
-            </Carousel>
-          </Box> */}
-          <Box sx={{ textAlign: isMobile ? "center" : "left" }}>
-            <Typography
-              variant='h4'
-              component='h2'
-              fontWeight='bold'
-              gutterBottom
-              mb={4}
-            >
-              Benefits of Choosing Solar
-            </Typography>
-
-            <Carousel
-              autoPlay={true}
-              interval={1000}
-              animation='slide'
               navButtonsAlwaysVisible={false}
             >
               {benefits.map((benefit, index) => (
@@ -440,7 +433,8 @@ export default function Home() {
                   key={index}
                   sx={{
                     backgroundColor: benefit.bgColor,
-                    height: isMobile ? "25rem" : "10rem",
+                    height: isMobile ? "27rem" : "11rem",
+                    width: isMobile ? "20rem" : "65rem",
                     borderRadius: isMobile ? "1rem" : "20rem",
                     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
                     overflow: "hidden",
@@ -449,33 +443,63 @@ export default function Home() {
                     justifyContent: "center",
                     alignItems: "center",
                     padding: isMobile ? "1rem" : "0rem",
+                    margin: "auto",
+                    mx: isMobile ? "2rem" : "auto",
+                  ...(isMobile?{
+                    borderRadius: "25px",
+                      // padding: "2rem",
+                      boxShadow:
+                        "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                  }:{})
                   }}
                 >
-                  <Box sx={{}}>
+                  <Box
+                    sx={{
+                      flexShrink: 0,
+                      borderRadius: isMobile ? "1rem" : "50%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      ...(isMobile
+                        ? {
+                            width: "19.5rem",
+                            height: "14rem",
+                            marginRight: "1rem",
+                            marginTop: "2rem",
+                            borderRadius: "1rem",
+                          }
+                        : {
+                            width: "10.2rem",
+                            height: "10.2rem",
+                            marginRight: "1rem",
+                            marginTop: "0rem",
+                            borderRadius: "50%",
+                            border: `7px solid ${
+                              benefit.borderColor || "blue"
+                            }`,
+                          }),
+                    }}
+                  >
                     <Box
                       sx={{
-                        
-                        flexShrink: 0,
-                        width: isMobile ? "250px" : "9.5rem",
-                        height: isMobile ? "250px" : "9.2rem",
-                        borderRadius: isMobile ? "1rem" : "50%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginRight: isMobile ? "1rem" : "1rem",
                         backgroundImage: `url(${benefit.image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         ...(isMobile
-                          ? {}
+                          ? {
+                              width: "15.5rem",
+                              height: "11rem",
+                            }
                           : {
-                              border: `7px solid ${
-                                benefit.borderColor || "blue"
-                              }`, 
+                              width: "7rem",
+                              height: "7rem",
                             }),
                       }}
                     ></Box>
                   </Box>
+
                   <CardContent
                     sx={{
                       textAlign: isMobile ? "center" : "left",
@@ -493,7 +517,7 @@ export default function Home() {
                     >
                       {benefit.title}
                     </Typography>
-                    <Typography variant='body2' color='text.secondary'>
+                    <Typography variant='body1' color='text.secondary'>
                       {benefit.description}
                     </Typography>
                   </CardContent>
@@ -501,9 +525,7 @@ export default function Home() {
               ))}
             </Carousel>
           </Box>
-          <Box
-            sx={{ marginTop: "2rem", textAlign: isMobile ? "center" : "left" }}
-          >
+          <Box sx={{ marginTop: "2rem", textAlign: "center" }}>
             <Typography
               variant='h4'
               component='h2'
@@ -521,21 +543,12 @@ export default function Home() {
               sx={{ padding: "2rem" }}
             >
               {content.map((item, index) => (
-                <Grid
-                  item
-                  key={index}
-                  // xs={isMobile ? 12 : 4}
-                  // sm={6}
-                  // md={4}
-                  // lg={4} // Adjust size for larger screens
-                  // sx={{
-                  // }}
-                  >
+                <Grid item key={index}>
                   <Box
                     sx={{
                       // margin:'2rem',
-                      width:'15.5rem',
-                      height:'15.5rem',
+                      width: "15.5rem",
+                      height: "15.5rem",
                       backgroundColor: item.bgColor,
                       borderRadius: "25px",
                       padding: "2rem",
@@ -545,7 +558,8 @@ export default function Home() {
                       alignItems: "center",
                       justifyContent: "center",
                       // height: "150px", // Ensure square shape
-                      boxShadow: "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                      boxShadow:
+                        "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
                       // boxShadow: "rgba(100, 100, 111, 0.15) 8.95px 5.95px 1.6px;",
                       // minWidth: "150px",
                       transition: "transform 0.3s ease",
@@ -567,7 +581,11 @@ export default function Home() {
                     <Typography variant='h6' fontWeight='bold'>
                       {item.title}
                     </Typography>
-                    <Typography variant='body2' color='text.secondary' fontSize={16}>
+                    <Typography
+                      variant='body2'
+                      color='text.secondary'
+                      fontSize={16}
+                    >
                       {item.description}
                     </Typography>
                   </Box>
@@ -575,7 +593,7 @@ export default function Home() {
               ))}
             </Grid>
           </Box>
-        </Container>
+        </Box>
 
         <Box
           sx={{
@@ -657,7 +675,7 @@ export default function Home() {
           <Typography
             variant='h4'
             sx={{
-              textAlign: "centre",
+              textAlign: "center",
               fontWeight: "bold",
               marginBottom: "20px",
             }}
@@ -673,11 +691,15 @@ export default function Home() {
               <Grid item xs={12} sm={6} md={6} key={index}>
                 <Card
                   sx={{
-                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                    boxShadow:
+                      "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
                     borderRadius: "10px",
                     maxWidth: isMobile ? "20rem" : "35rem",
                     minHeight: "22.5rem",
                     backgroundColor: service.bgColor,
+                    ...(isMobile?{}:{
+                      height:'32.5rem'
+                    })
                   }}
                 >
                   <CardMedia
@@ -686,7 +708,7 @@ export default function Home() {
                     alt={service.title}
                     sx={{
                       margin: "auto",
-                    maxWidth: isMobile ? "18rem" : "30rem",
+                      maxWidth: isMobile ? "18rem" : "30rem",
                       objectFit: "cover",
                       borderRadius: "10px",
                       padding: isMobile ? "1rem" : "2rem",
@@ -705,7 +727,7 @@ export default function Home() {
                       {service.title}
                     </Typography>
                     <Typography
-                      variant='body2'
+                      variant={isMobile ? "body2" : "body1"}
                       sx={{
                         textAlign: "left",
                         whiteSpace: "pre-line",
@@ -737,74 +759,3 @@ const style = {
     fontSize: 30,
   },
 };
-
-// const BenefitImage = styled("div")(({ bgcolor }) => ({
-//   width: 120,
-//   height: 120,
-//   borderRadius: "50%",
-//   padding: 4, // Border thickness
-//   backgroundColor: bgcolor, // Darker border color
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   "& img": {
-//     width: "100%",
-//     height: "100%",
-//     borderRadius: "50%",
-//     objectFit: "cover",
-//   },
-// }));
-
-// const BenefitCard = styled(Card)(({ bgcolor }) => ({
-//   backgroundColor: bgcolor,
-//   boxShadow: "none",
-//   borderRadius: 16,
-//   height: "100%",
-// }));
-
-const BenefitCard = styled(Box)(({ theme, bgcolor }) => ({
-  backgroundColor: bgcolor,
-  borderRadius: "1rem",
-  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-  overflow: "hidden",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  padding: "1rem",
-  [theme.breakpoints.up("sm")]: {
-    flexDirection: "row",
-    borderRadius: "20rem",
-  },
-}));
-
-const BenefitImage = styled(Box)(({ theme, bgcolor }) => ({
-  flexShrink: 0,
-  width: "100%",
-  height: "200px",
-  borderRadius: "1rem",
-  backgroundColor: bgcolor,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  marginBottom: "1rem",
-  img: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    borderRadius: "1rem",
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "250px",
-    height: "250px",
-    marginBottom: "0",
-    marginRight: "1rem",
-  },
-}));
-
-const HeroImage = styled("img")({
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  borderRadius: 8,
-  maxHeight: 400,
-});
