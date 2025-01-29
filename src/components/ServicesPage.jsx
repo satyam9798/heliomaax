@@ -37,7 +37,7 @@ const items = [
   {
     title: "Component A of the PM-KUSUM Scheme",
     description:
-      "Component A of the PM-KUSUM Scheme focuses on the installation of grid-connected ground-mounted solar power plants, with each plant having a capacity of up to 2 MW. \n \n The goal is to achieve a total capacity of 10 GW across the country. Farmers, cooperatives, panchayats, and Farmer Producer Organizations (FPOs) can set up these plants on barren or unused land. The electricity generated is supplied to the power grid, providing an additional source of income to farmers through the sale of power to distribution companies (DISCOMs) at pre-determined tariffs. \n \n This initiative promotes renewable energy and supports farmers financially while utilizing unused land effectively.",
+      "Component A of the PM-KUSUM Scheme focuses on the installation of grid-connected ground-mounted solar power plants, with each plant having a capacity of up to 2 MW. \n \n  Farmers, cooperatives, panchayats, and Farmer Producer Organizations (FPOs) can set up these plants on unused land. The electricity generated is supplied to the power grid, providing an additional source of income to farmers through DISCOMs at pre-determined tariffs. \n \n This initiative supports farmers financially while utilizing unused land effectively.",
     image: Kusum,
     bgColor: "#ABFDFF",
   },
@@ -259,7 +259,7 @@ const Services = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#F2FDF5" }}>
+    <Box sx={{ backgroundColor: "#F2FDF5", maxWidth:'100vw',overflowX:'hidden' }}>
       {/* image section */}
       <Box
         sx={{
@@ -461,7 +461,7 @@ const Services = () => {
                 key={index}
                 sx={{
                   padding: "10px",
-                  height: isMobile ? "50rem" : "28rem",
+                  height: isMobile ? "52.5rem" : "28rem",
                   backgroundColor: item.bgColor,
                   padding: "20px",
                   borderRadius: "30px",

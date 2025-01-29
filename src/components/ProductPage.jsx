@@ -79,7 +79,7 @@ const Product = () => {
   ];
 
   return (
-    <Box sx={{ backgroundColor: "#F2FDF5" }}>
+    <Box sx={{ backgroundColor: "#F2FDF5", maxWidth:'100vw',overflowX:'hidden' }}>
       <Box
         sx={{
           position: "relative",

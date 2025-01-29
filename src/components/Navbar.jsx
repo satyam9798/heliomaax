@@ -195,6 +195,9 @@ function Navbar() {
               <ListItem button component="a" href="/contact-us">
                 <ListItemText primary="Contact Us" />
               </ListItem>
+              <ListItem button component="a" href="/get-quote">
+                <ListItemText primary="Get Quote" />
+              </ListItem>
             </List>
           </Box>
         </Drawer>

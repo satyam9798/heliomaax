@@ -237,13 +237,13 @@ export default function Home() {
                 {t(item.description)}
               </Typography>
               <Button variant='contained' style={style.carouselButton}>
-                Learn More <MdKeyboardArrowRight />
+                {t('learn_more')} <MdKeyboardArrowRight />
               </Button>
             </Box>
           </>
         ))}
       </Carousel>
-      <Box sx={{ backgroundColor: "#F2FDF5" }}>
+      <Box sx={{ backgroundColor: "#F2FDF5", maxWidth:'100vw',overflowX:'hidden' }}>
         <Box
           sx={{ py: 6, maxWidth: isMobile ? "100vw" : "85vw", margin: "auto" }}
         >
@@ -295,14 +295,7 @@ export default function Home() {
                   {t("ABOUT COMPANY")}
                 </Typography>
                 <Typography variant='body1' color='text.secondary'>
-                  We help individuals and businesses install solar panels easily
-                  and affordably using government schemes. Our mission is to
-                  make renewable energy accessible to everyone, reducing
-                  electricity costs and protecting the environment. With a focus
-                  on quality, we provide end-to-end support, from consultation
-                  to installation. Our team ensures you get the best benefits
-                  from government subsidies and schemes. Join us in creating a
-                  greener and sustainable future for all.
+                  {t('about_company_desc')}
                 </Typography>
               </Grid>
             </Grid>
@@ -351,18 +344,13 @@ export default function Home() {
                   textAlign: "center",
                 }}
               >
-                Mission
+                {t('home_mission_title')}
               </Typography>
               <Typography
                 variant='body1'
                 sx={{ marginBottom: "10px", textAlign: "left" }}
               >
-                We aim to simplify the adoption of solar energy through
-                government schemes, reducing dependency on non-renewable
-                resources. By delivering reliable solutions and exceptional
-                service, we strive to lower energy costs for households and
-                businesses. Together, we are building a sustainable tomorrow,
-                one solar panel at a time.
+                {t('home_mission_desc')}
               </Typography>
             </Box>
 
@@ -397,17 +385,13 @@ export default function Home() {
                   textAlign: "center",
                 }}
               >
-                Values
+                {t('home_value_title')}
               </Typography>
               <Typography
                 variant='body1'
                 sx={{ marginBottom: "10px", textAlign: "left" }}
               >
-                We believe in sustainability, innovation, and integrity as the
-                foundation of our work. We value collaboration, working closely
-                with clients and communities to achieve shared goals. At the
-                heart of our company is a passion for creating lasting
-                environmental and economic impact through renewable energy.
+                {t('home_value_desc')}
               </Typography>
             </Box>
           </Box>
@@ -419,7 +403,7 @@ export default function Home() {
               gutterBottom
               mb={4}
             >
-              Benefits of Choosing Solar
+              {t('home_benefits_title')}
             </Typography>
 
             <Carousel
@@ -533,7 +517,7 @@ export default function Home() {
               gutterBottom
               mb={4}
             >
-              How we help{" "}
+              {t('home_help_title')}{" "}
             </Typography>
             <Grid
               container
@@ -629,7 +613,7 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
-                Ready to install Solar Panel at your premises.
+                {t('tab_quote_secondary')}
               </Typography>
               <Typography
                 variant='h6'
@@ -640,7 +624,7 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
-                Get your quote now!
+                {t('tab_quote_primary')}
               </Typography>
             </Box>
           </Box>
@@ -666,7 +650,7 @@ export default function Home() {
                 },
               }}
             >
-              Get Quote <MdKeyboardArrowRight />
+              {t('get_quote')} <MdKeyboardArrowRight />
             </Button>
           </Box>
         </Box>
@@ -680,7 +664,7 @@ export default function Home() {
               marginBottom: "20px",
             }}
           >
-            Featured Services
+            {t('home_featured_title')}
           </Typography>
           <Grid
             container

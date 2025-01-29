@@ -1,4 +1,17 @@
 {
+  "home_mission_title": "मिशन",
+  "home_mission_desc": "हम सरकारी योजनाओं के माध्यम से सौर ऊर्जा अपनाने को सरल बनाने का लक्ष्य रखते हैं, जिससे गैर-नवीकरणीय संसाधनों पर निर्भरता कम हो। विश्वसनीय समाधान और उत्कृष्ट सेवा प्रदान करके, हम घरों और व्यवसायों के लिए ऊर्जा लागत कम करने का प्रयास करते हैं। मिलकर, हम एक टिकाऊ भविष्य का निर्माण कर रहे हैं, एक सौर पैनल एक समय में।",
+  "home_value_title": "मूल्य",
+  "home_value_desc": "हम स्थिरता, नवाचार और ईमानदारी को अपने कार्य की नींव मानते हैं। हम सहयोग को महत्व देते हैं और साझा लक्ष्यों को प्राप्त करने के लिए ग्राहकों और समुदायों के साथ मिलकर काम करते हैं। हमारी कंपनी के केंद्र में नवीकरणीय ऊर्जा के माध्यम से स्थायी पर्यावरणीय और आर्थिक प्रभाव बनाने का जुनून है।",
+  "home_benefits_title": "सोलर चुनने के फायदे",
+  "home_help_title": "हम कैसे मदद करते हैं",
+  "learn_more": "अधिक जानें",
+  "tab_quote_secondary": "आपके परिसर में सोलर पैनल स्थापित करने के लिए तैयार।",
+  "tab_quote_primary": "अभी अपना उद्धरण प्राप्त करें!",
+  "get_quote": "उद्धरण प्राप्त करें",
+  "home_featured_title": "विशेष रुप से सेवाएं",
+
+
   "ABOUT COMPANY": "कंपनी के बारे में",
   "PM Kusum 'A' Yojana": "पीएम कुसुम 'ए' योजना",
   "PM Kusum 'B' Yojana": "पीएम कुसुम 'बी' योजना",
@@ -34,5 +47,21 @@
   "Faster Approval Process": "तेज अनुमोदन प्रक्रिया",
   "With our expertise, we ensure your applications are accurate and complete, speeding up the approval process for subsidies.": "हमारे विशेषज्ञता के साथ, हम सुनिश्चित करते हैं कि आपके आवेदन सटीक और पूर्ण हों, जिससे सब्सिडी के लिए अनुमोदन प्रक्रिया में तेजी आए।",
   "Transparency at Every Step": "हर कदम पर पारदर्शिता",
-  "Stay informed! We provide regular updates on the status of your subsidy application so you're always in the loop.": "जानकारी में बने रहें! हम आपके सब्सिडी आवेदन की स्थिति पर नियमित अपडेट प्रदान करते हैं ताकि आप हमेशा जानकारी में रहें।"
+  "Stay informed! We provide regular updates on the status of your subsidy application so you're always in the loop.": "जानकारी में बने रहें! हम आपके सब्सिडी आवेदन की स्थिति पर नियमित अपडेट प्रदान करते हैं ताकि आप हमेशा जानकारी में रहें।",
+  "We help individuals and businesses install solar panels easily and affordably using government schemes. Our mission is to make renewable energy accessible to everyone, reducing electricity costs and protecting the environment. With a focus on quality, we provide end-to-end support, from consultation to installation. Our team ensures you get the best benefits from government subsidies and schemes. Join us in creating a greener and sustainable future for all.": "हम व्यक्तियों और व्यवसायों को सरकारी योजनाओं के माध्यम से आसानी से और किफायती तरीके से सौर पैनल स्थापित करने में मदद करते हैं। हमारा मिशन सभी के लिए नवीकरणीय ऊर्जा को सुलभ बनाना है, जिससे बिजली लागत कम हो और पर्यावरण की रक्षा हो। गुणवत्ता पर ध्यान केंद्रित करते हुए, हम परामर्श से लेकर स्थापना तक पूर्ण समर्थन प्रदान करते हैं। हमारी टीम सुनिश्चित करती है कि आपको सरकारी सब्सिडी और योजनाओं से सर्वोत्तम लाभ मिले। हमारे साथ मिलकर एक हरित और टिकाऊ भविष्य बनाएं।",
+  "Benefits of Choosing Solar": "सौर ऊर्जा चुनने के लाभ",
+  "How we help": "हम कैसे मदद करते हैं",
+  "Ready to install Solar Panel at your premises.": "आपके परिसर में सौर पैनल स्थापित करने के लिए तैयार।",
+  "Featured services": "विशेष सेवाएँ",
+  "Get your quote now!": "अभी अपना कोट प्राप्त करें!",
+  "Get quote": "कोट प्राप्त करें",
+  "Rooftop solar Installation": "रूफटॉप सौर स्थापना",
+  "Residential Solutions": "आवासीय समाधान",
+  "Commercial solutions": "व्यावसायिक समाधान",
+  "System Types": "सिस्टम प्रकार",
+  "On-Grid": "ऑन-ग्रिड",
+  "Off-Grid": "ऑफ-ग्रिड",
+  "Hybrid": "हाइब्रिड",
+  "about_company_desc": "हम सरकारी योजनाओं का उपयोग करके व्यक्तियों और व्यवसायों को आसानी से और किफायती तरीके से सौर पैनल स्थापित करने में मदद करते हैं। हमारा मिशन नवीकरणीय ऊर्जा को सभी के लिए सुलभ बनाना, बिजली की लागत कम करना और पर्यावरण की रक्षा करना है। गुणवत्ता पर ध्यान देने के साथ, हम परामर्श से लेकर स्थापना तक, शुरू से अंत तक सहायता प्रदान करते हैं। हमारी टीम यह सुनिश्चित करती है कि आपको सरकारी सब्सिडी और योजनाओं से सर्वोत्तम लाभ मिले। सभी के लिए एक हरा-भरा और टिकाऊ भविष्य बनाने में हमारे साथ जुड़ें।"
+
 }
