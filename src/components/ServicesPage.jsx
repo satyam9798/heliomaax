@@ -715,7 +715,8 @@ const Services = () => {
         }}
       >
         <Typography
-          variant='h3'
+          variant={ isMobile? 'h4' : 'h3'}
+          textAlign={isMobile?'center':'left'}
           component='h2'
           fontWeight='bold'
           gutterBottom

@@ -115,7 +115,7 @@ const featuredServices = [
     image: Offgrid,
     title: "Off Grid System",
     description:
-      "Achieve complete energy independence with an off-grid solar system. This system stores solar energy in batteries, ensuring a reliable power supply even in remote areas or during power outages, providing unmatched reliability and sustainability.",
+    "Achieve complete energy independence with an off-grid solar system. This system stores solar energy in batteries, ensuring a reliable power supply even in remote areas or during power outages, providing unmatched reliability and sustainability.",
     bgColor: "#ABFDFF",
   },
   {
@@ -159,7 +159,7 @@ const content = [
   {
     title: "Transparency at Every Step",
     description:
-      "Stay informed! We provide regular updates on the status of your subsidy application so you’re always in the loop.",
+      "Stay informed! We provide regular updates on the status of your subsidy application so you're always in the loop.",
     image: HelpTransperancy,
     bgColor: "#CBFFD9",
   },
@@ -234,7 +234,7 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
-                {item.description}
+                {t(item.description)}
               </Typography>
               <Button variant='contained' style={style.carouselButton}>
                 Learn More <MdKeyboardArrowRight />
@@ -515,10 +515,10 @@ export default function Home() {
                       fontWeight='bold'
                       sx={{ textAlign: isMobile ? "center" : "left" }}
                     >
-                      {benefit.title}
+                      {t(benefit.title)}
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
-                      {benefit.description}
+                      {t(benefit.description)}
                     </Typography>
                   </CardContent>
                 </Box>
@@ -579,14 +579,14 @@ export default function Home() {
                       }}
                     />
                     <Typography variant='h6' fontWeight='bold'>
-                      {item.title}
+                      {t(item.title)}
                     </Typography>
                     <Typography
                       variant='body2'
                       color='text.secondary'
                       fontSize={16}
                     >
-                      {item.description}
+                      {t(item.description)}
                     </Typography>
                   </Box>
                 </Grid>
@@ -724,7 +724,7 @@ export default function Home() {
                         textAlign: "left",
                       }}
                     >
-                      {service.title}
+                      {t(service.title)}
                     </Typography>
                     <Typography
                       variant={isMobile ? "body2" : "body1"}
@@ -734,7 +734,7 @@ export default function Home() {
                         margin: 0,
                       }}
                     >
-                      {service.description}
+                      {t(service.description)}
                     </Typography>
                   </CardContent>
                 </Card>

@@ -14,6 +14,7 @@ import {
 import { useTheme, useMediaQuery } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import Image2 from "../assets/image1.jpeg";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const ContactUs = () => {
   const theme = useTheme();
@@ -96,13 +97,13 @@ const ContactUs = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#F2FDF5" }}>
+    <Box sx={{ backgroundColor: "#F2FDF5", overflowX:"hidden" }}>
       <Box
         sx={{
           position: "relative",
           height: "300px",
           color: "white",
-          textAlign: "center",
+          textAlign: "left",
         }}
       >
         <Box
@@ -126,8 +127,9 @@ const ContactUs = () => {
             zIndex: 1,
             height: "100%",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "center",
+            marginLeft: "45px",
           }}
         >
           <Box sx={{ textAlign: "left" }}>
@@ -135,11 +137,7 @@ const ContactUs = () => {
               variant={isMobile ? "h5" : "h3"}
               sx={{ fontWeight: "bold", marginBottom: "10px" }}
             >
-              Contact Us
-            </Typography>
-            <Typography variant={isMobile ? "body2" : "body1"}>
-              To request a quote, contact us directly or fill out the form and
-              we will get back to you promptly.
+              Contact us
             </Typography>
           </Box>
         </Box>
@@ -216,14 +214,23 @@ const ContactUs = () => {
               />
 
               <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
+                onClick={handleSubmit}
                 disabled={submitting}
-                sx={{ mt: 2 }}
+                variant='contained'
+                sx={{
+                  backgroundColor: "#80ED99",
+                  width: "8rem",
+                  margin: "auto",
+                  color: "#000000",
+                  fontWeight: "700",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#6CCD85",
+                  },
+                }}
               >
                 {submitting ? "Sending..." : "Submit"}
+                <MdKeyboardArrowRight />
               </Button>
             </form>
           </Box>
@@ -236,6 +243,9 @@ const ContactUs = () => {
               backgroundColor: "#CBFFD9",
               marginTop: "25px",
               maxWidth: "45rem",
+              boxShadow:
+                      "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                    borderRadius: "10px",
             }}
           >
             <CardContent>
@@ -245,6 +255,7 @@ const ContactUs = () => {
               >
                 Our Office
               </Typography>
+              
               <List>
                 <ListItem>
                   <ListItemText

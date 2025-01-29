@@ -4,6 +4,9 @@ import {
   Box,
   Typography,
   Button,
+  List,
+  ListItem,
+  ListItemText,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/material";
 
@@ -18,7 +21,6 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const Product = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
 
   const content = [
     {
@@ -76,7 +78,6 @@ const Product = () => {
     },
   ];
 
-
   return (
     <Box sx={{ backgroundColor: "#F2FDF5" }}>
       <Box
@@ -133,7 +134,7 @@ const Product = () => {
           }}
         >
           <Typography
-            variant='h3'
+            variant={isMobile? 'h4': 'h3'}
             component='h2'
             fontWeight='bold'
             gutterBottom
@@ -166,7 +167,7 @@ const Product = () => {
                   }}
                 >
                   <Typography
-                    variant='h4'
+                    variant={isMobile? 'h5': 'h4'}
                     sx={{
                       fontWeight: "bold",
                       marginBottom: "10px",
@@ -247,13 +248,13 @@ const Product = () => {
               display: "flex",
               justifyContent: "space-around",
               // marginleft:'auto'
-              marginLeft:isMobile?'1rem':'0rem',
-              marginRight:isMobile?'1rem':'0rem',
+              marginLeft: isMobile ? "1rem" : "0rem",
+              marginRight: isMobile ? "1rem" : "0rem",
             }}
           >
             <Box>
               <Typography
-                variant={isMobile?'body1': 'h6'}
+                variant={isMobile? 'body1': 'h6'}
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
@@ -264,7 +265,7 @@ const Product = () => {
                 Ready to install Solar Panel at your premises.
               </Typography>
               <Typography
-                variant='h6'
+                variant={isMobile? 'body1': 'h6'}
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
@@ -307,8 +308,8 @@ const Product = () => {
           sx={{
             width: "80vw",
             maxWidth: "80vw",
-            margin:isMobile?'0': "auto",
-            padding:isMobile?'0': "20px",
+            // margin:isMobile?'0': "auto",
+            padding: isMobile ? "0" : "20px",
           }}
         >
           <Typography
@@ -317,6 +318,8 @@ const Product = () => {
               textAlign: "left",
               fontWeight: "bold",
               marginBottom: "40px",
+              my:'1rem',
+              mx:'1rem'
             }}
           >
             System Types
@@ -328,6 +331,7 @@ const Product = () => {
               sx={{
                 marginBottom: "40px",
                 maxWidth: "80rem",
+                
               }}
             >
               <Box sx={{ margin: "auto" }}>
@@ -339,20 +343,22 @@ const Product = () => {
                     fontWeight: "bold",
                     marginBottom: "20px",
                     margin: "auto",
+                    px:'0.5rem'
                   }}
                 >
                   {system.type}
                 </Typography>
 
                 <Grid
-                  container
+                  // container
                   spacing={4}
                   direction='column'
-                  alignItems="center"
-                  justifyContent="center"
+                  alignItems='center'
+                  justifyContent='center'
+                  sx={{ width: "100vw" }}
                 >
                   {/* Image Section */}
-                  <Grid item xs={12}>
+                  <Grid item xs={6} sx={{ display: "flex", px: "2rem" }}>
                     <Box
                       component='img'
                       src={system.image}
@@ -360,22 +366,23 @@ const Product = () => {
                       sx={{
                         width: "100%",
                         borderRadius: "10px",
-                        maxWidth: isMobile? '75rem': "85rem",
+                        maxWidth: isMobile ? "95rem" : "55rem",
                         margin: "auto",
                       }}
                     />
                   </Grid>
 
                   {/* Advantages Section */}
-                  <Grid item xs={12}>
+                  <Grid item xs={6} sx={{ px: "0.2rem" }}>
                     <Box
                       sx={{
                         width: "100vw",
-                        padding: "20px",
+                        px:'0.5rem'
+                        // padding: "20px",
                       }}
                     >
                       <Typography
-                        variant= {isMobile?'body1': 'h4'}
+                        variant={isMobile ? "body1" : "h4"}
                         sx={{
                           fontWeight: "bold",
                           marginBottom: "10px",
@@ -391,29 +398,15 @@ const Product = () => {
                           margin: 0,
                         }}
                       >
-                        {system.advantages.map((advantage, idx) => (
-                          <Box
-                            component='li'
-                            key={idx}
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              marginBottom: "8px",
-                            }}
-                          >
-                            <Typography
-                              variant='h5'
-                              sx={{
-                                fontWeight: "bold",
-                                marginRight: "8px",
-                                color: (theme) => theme.palette.primary.main,
-                              }}
-                            >
-                              {idx + 1}.
-                            </Typography>
-                            <Typography variant='body1'>{advantage}</Typography>
-                          </Box>
-                        ))}
+                        <List>
+                          {system.advantages.map((advantage, idx) => (
+                            <ListItem>
+                              <ListItemText
+                                primary={advantage}
+                              />
+                            </ListItem>
+                          ))}
+                        </List>
                       </Box>
                     </Box>
                   </Grid>
@@ -431,6 +424,7 @@ const Product = () => {
                         // padding: "20px",
                         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
                         margin: "auto",
+                        px:'0.5rem'
                       }}
                     >
                       {/* Text Section */}
@@ -444,7 +438,7 @@ const Product = () => {
                       >
                         <Box>
                           <Typography
-                            variant='h6'
+                            variant={isMobile? 'body1': 'h6'}
                             sx={{
                               fontWeight: "bold",
                               marginBottom: "10px",
@@ -455,7 +449,7 @@ const Product = () => {
                             Ready to install Solar Panel at your premises.
                           </Typography>
                           <Typography
-                            variant='h6'
+                            variant={isMobile? 'body1': 'h6'}
                             sx={{
                               fontWeight: "bold",
                               marginBottom: "10px",
@@ -481,6 +475,7 @@ const Product = () => {
                             backgroundColor: "#80ED99",
                             width: "8rem",
                             margin: "auto",
+                            marginRight:'10px',
                             color: "#000000",
                             fontWeight: "700",
                             textTransform: "none",

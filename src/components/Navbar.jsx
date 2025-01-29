@@ -78,7 +78,7 @@ function Navbar() {
           <img
             src={Icon}
             alt="Logo"
-            style={{ maxWidth:isMobile?'10rem': "15rem", maxHeight: "50px" }}
+            style={{ maxWidth:isMobile?'4rem': "15rem", maxHeight: "50px" }}
           />
         </Box>
 
