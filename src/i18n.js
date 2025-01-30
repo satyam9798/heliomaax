@@ -6,8 +6,8 @@ i18n
   .use(Backend) // Load translations from files
   .use(initReactI18next)
   .init({
-    lng: "en", // Default language
-    fallbackLng: "en",
+    lng: "hi", // Default language
+    fallbackLng: "hi",
     backend: {
       loadPath: "/locales/{{lng}}.json", // Path to translation files
     },
