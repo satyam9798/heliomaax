@@ -12,6 +12,15 @@ import InstallationExample from '../assets/installation_ex.png';
 import RooftopFeature from '../assets/rooftop_feature.png';
 import RooftopSolarExample from '../assets/rooftop_solar_ex.jpg';
 import SolarZoom from '../assets/solar_zoom.jpg';
+import MuftBijliMobile from '../assets/muftBijliMobile.png';
+import HutPanel from '../assets/hd/hut_panel.jpg';
+import Maintainence from '../assets/hd/maintainence.jpg';
+import MaintainencePanel from '../assets/hd/maintainence_panel.jpg';
+import ModiAim from '../assets/hd/modi_aim.jpg';
+import SolarEnergy from '../assets/hd/solar_energy.jpg';
+import SolarPanel from '../assets/hd/solar_panel.jpg';
+import PmKusumYojana from '../assets/hd/pm_kusum_yojana.webp';
+import SubsidyGov from '../assets/hd/subsidy_gov.png';
 
 export {
   Expertise,
@@ -27,5 +36,6 @@ export {
   InstallationExample,
   RooftopFeature,
   RooftopSolarExample,
-  SolarZoom
+  SolarZoom,
+  MuftBijliMobile, HutPanel, Maintainence, MaintainencePanel, ModiAim, SolarEnergy, SolarPanel,PmKusumYojana,SubsidyGov,
 };
