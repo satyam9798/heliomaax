@@ -15,6 +15,7 @@ import { useTheme, useMediaQuery } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import Image2 from "../assets/image1.jpeg";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { MaintainencePanel } from "../constants/images";
 
 const ContactUs = () => {
   const theme = useTheme();
@@ -75,7 +76,7 @@ const ContactUs = () => {
 
     try {
       await emailjs.send(
-        "service_gzr2xyi",
+        "service_0qqvdpi",
         "template_2m80zuy",
         {
           to_email: "mailtosatyamshivam@gmail.com",
@@ -101,26 +102,30 @@ const ContactUs = () => {
       <Box
         sx={{
           position: "relative",
-          height: "300px",
+          width: "100vw", // Full width
+          height: isMobile? '175px' : "300px",
           color: "white",
           textAlign: "left",
+          overflow: "hidden", 
         }}
       >
+        {/* Background Image */}
         <Box
           sx={{
             position: "absolute",
             top: 0,
             left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url(${Image2})`,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(${MaintainencePanel})`,
+            filter: "blur(2px)",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "blur(4px)",
             zIndex: 0,
           }}
         />
 
+        {/* Content Box */}
         <Box
           sx={{
             position: "relative",
@@ -137,9 +142,70 @@ const ContactUs = () => {
               variant={isMobile ? "h5" : "h3"}
               sx={{ fontWeight: "bold", marginBottom: "10px" }}
             >
-              Contact us
+              Contact Us
             </Typography>
           </Box>
+        </Box>
+
+        {/* Curved Bottom Effect */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: isMobile?'35px': "80px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <defs>
+              <linearGradient
+                id='waveGradient'
+                x1='0%'
+                y1='0%'
+                x2='100%'
+                y2='0%'
+              >
+                <stop offset='0%' stopColor='rgba(203,255,217,1)' />
+                <stop offset='35%' stopColor='rgba(171,253,255,1)' />
+                <stop offset='100%' stopColor='rgba(0,212,255,1)' />
+              </linearGradient>
+            </defs>
+            <path
+              fill='url(#waveGradient)'
+              fillOpacity='1'
+              d='M0,256L60,250.7C120,245,240,235,360,240C480,245,600,267,720,256C840,245,960,203,1080,186.7C1200,171,1320,181,1380,186.7L1440,192V320H0Z'
+            ></path>
+          </svg>
+        </Box>
+
+        {/* Decorative Wavy Line */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: 0,
+            width: "100%",
+            height: "30px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <path
+              fill='rgba(255,255,255,0.5)'
+              fillOpacity='1'
+              d='M0,256L120,250.7C240,245,480,235,720,240C960,245,1200,267,1320,256L1440,250V320H0Z'
+            ></path>
+          </svg>
         </Box>
       </Box>
 
@@ -260,22 +326,23 @@ const ContactUs = () => {
                 <ListItem>
                   <ListItemText
                     primary="Address"
-                    secondary="1234 Street Name, City, Country"
+                    secondary="GS-117, Ground floor, Aashirwad plaza, Dekaha Rewa, M.P India. 486001"
                   />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Phone" secondary="(123) 456-7890" />
+                  <ListItemText primary="Phone" secondary="7898725971 / 7974653645
+" />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary="Email"
-                    secondary="contact@company.com"
+                    secondary=" heliomaaxinfo@gmail.com"
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary="Working Hours"
-                    secondary="Mon - Fri: 9 AM - 6 PM"
+                    secondary="Mon - Fri: 10 AM - 6 PM"
                   />
                 </ListItem>
               </List>

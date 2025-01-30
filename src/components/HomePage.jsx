@@ -16,17 +16,13 @@ import {
 
 import { useTranslation } from "react-i18next";
 
-import { styled } from "@mui/material/styles";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import "../styles/Home.css";
-import Image1 from "../assets/image1.jpeg";
-import Image2 from "../assets/image2.jpg";
 import Image4 from "../assets/waterFarmer.jpg";
 import Offgrid from "../assets/offgrid.png";
 import Ongrid from "../assets/ongrid.png";
 import Hybrid from "../assets/hybrid.png";
-import Kusum from "../assets/kusumYojana.png";
 import Bijli from "../assets/muftBijli.png";
 import HelpEligible from "../assets/helpElegibile.png";
 import HelpDocument from "../assets/helpDocument.png";
@@ -37,28 +33,39 @@ import Tool1 from "../assets/tool1.png";
 import Tool2 from "../assets/tool2.png";
 import Tool3 from "../assets/tool3.png";
 import Tool4 from "../assets/tool4.png";
+import {
+  MuftBijliMobile,
+  RooftopFeature,
+  RooftopSolarExample, HutPanel, Maintainence, MaintainencePanel, ModiAim, SolarEnergy, SolarPanel,
+  PmKusumYojana
+} from "../constants/images";
 
 const carouselItems = [
   {
-    image: Image4,
-    title: `PM Kusum 'A' Yojana`,
-    description: "Pradhan Mantri Kisan Urja Suraksha evam Uthhan Mahabhiyan.",
-  },
-  {
-    image: Image2,
-    title: "Powering your Future with Sustainable Energy",
-    description: "Harness the Sun, Save the Planet.",
-  },
-  {
     image: Bijli,
+    mobileImage: MuftBijliMobile,
     title: "PM Surya Ghar: Muft Bijli Yojana",
+    linkTo: '/services',
     description:
-      "Goverment Scheme that aims to provide free electricity to households in India.",
+    "Goverment Scheme that aims to provide free electricity to households in India.",
+  },
+  {
+    image: PmKusumYojana,
+    title: `PM Kusum 'A' Yojana`,
+    linkTo: '/services',
+    description: "Pradhan Mantri Kisan Urja Suraksha evam Uthhan Mahabhiyan.",
   },
   {
     image: Image4,
     title: "PM Kusum 'B' Yojana",
+    linkTo: '/services',
     description: "Mukhyamantri Solar Pump Yojana.",
+  },
+  {
+    image: RooftopSolarExample,
+    title: "Powering your Future with Sustainable Energy",
+    linkTo: '/products',
+    description: "Harness the Sun, Save the Planet.",
   },
 ];
 const benefits = [
@@ -69,6 +76,7 @@ const benefits = [
     image: Tool3,
     bgColor: "#CBFFD9",
     borderColor: "#90EE90",
+
   },
   {
     title: "Reduced electricity bills.",
@@ -98,7 +106,7 @@ const benefits = [
 
 const featuredServices = [
   {
-    image: Offgrid,
+    image: RooftopFeature,
     title: "Rooftop Solar Installations",
     description:
       "Transform your rooftop into a source of clean, renewable energy. Our rooftop solar installations are tailored to maximize energy generation while blending seamlessly with your space, helping you save on electricity bills and contribute to a greener planet.",
@@ -115,7 +123,7 @@ const featuredServices = [
     image: Offgrid,
     title: "Off Grid System",
     description:
-    "Achieve complete energy independence with an off-grid solar system. This system stores solar energy in batteries, ensuring a reliable power supply even in remote areas or during power outages, providing unmatched reliability and sustainability.",
+      "Achieve complete energy independence with an off-grid solar system. This system stores solar energy in batteries, ensuring a reliable power supply even in remote areas or during power outages, providing unmatched reliability and sustainability.",
     bgColor: "#ABFDFF",
   },
   {
@@ -197,11 +205,27 @@ export default function Home() {
       >
         {carouselItems.map((item, index) => (
           <>
-            <div
+            <Box
               className='carousel-slide'
               key={index}
-              style={{ backgroundImage: `url(${item.image})` }}
-            ></div>
+              style={{
+                backgroundImage: `url(${
+                  isMobile ? item.mobileImage ?? item.image : item.image
+                })`,
+                objectFit: "contain",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                height: "80vh",
+                width: "100%",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                color: "white",
+                filter: "brightness(0.3)",
+              }}
+            ></Box>
             <Box
               sx={{
                 position: "absolute",
@@ -236,14 +260,20 @@ export default function Home() {
               >
                 {t(item.description)}
               </Typography>
-              <Button variant='contained' style={style.carouselButton}>
-                {t('learn_more')} <MdKeyboardArrowRight />
+              <Button variant='contained' style={style.carouselButton} href={item.linkTo}>
+                {t("learn_more")} <MdKeyboardArrowRight />
               </Button>
             </Box>
           </>
         ))}
       </Carousel>
-      <Box sx={{ backgroundColor: "#F2FDF5", maxWidth:'100vw',overflowX:'hidden' }}>
+      <Box
+        sx={{
+          backgroundColor: "#F2FDF5",
+          maxWidth: "100vw",
+          overflowX: "hidden",
+        }}
+      >
         <Box
           sx={{ py: 6, maxWidth: isMobile ? "100vw" : "85vw", margin: "auto" }}
         >
@@ -260,7 +290,7 @@ export default function Home() {
                   sx={{
                     width: isMobile ? "15rem" : "40rem",
                     height: isMobile ? "15rem" : "20rem",
-                    backgroundImage: `url(${Image4})`,
+                    backgroundImage: `url(${MaintainencePanel})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     margin: "auto",
@@ -295,7 +325,7 @@ export default function Home() {
                   {t("ABOUT COMPANY")}
                 </Typography>
                 <Typography variant='body1' color='text.secondary'>
-                  {t('about_company_desc')}
+                  {t("about_company_desc")}
                 </Typography>
               </Grid>
             </Grid>
@@ -344,13 +374,13 @@ export default function Home() {
                   textAlign: "center",
                 }}
               >
-                {t('home_mission_title')}
+                {t("home_mission_title")}
               </Typography>
               <Typography
                 variant='body1'
                 sx={{ marginBottom: "10px", textAlign: "left" }}
               >
-                {t('home_mission_desc')}
+                {t("home_mission_desc")}
               </Typography>
             </Box>
 
@@ -385,13 +415,13 @@ export default function Home() {
                   textAlign: "center",
                 }}
               >
-                {t('home_value_title')}
+                {t("home_value_title")}
               </Typography>
               <Typography
                 variant='body1'
                 sx={{ marginBottom: "10px", textAlign: "left" }}
               >
-                {t('home_value_desc')}
+                {t("home_value_desc")}
               </Typography>
             </Box>
           </Box>
@@ -403,7 +433,7 @@ export default function Home() {
               gutterBottom
               mb={4}
             >
-              {t('home_benefits_title')}
+              {t("home_benefits_title")}
             </Typography>
 
             <Carousel
@@ -429,12 +459,14 @@ export default function Home() {
                     padding: isMobile ? "1rem" : "0rem",
                     margin: "auto",
                     mx: isMobile ? "2rem" : "auto",
-                  ...(isMobile?{
-                    borderRadius: "25px",
-                      // padding: "2rem",
-                      boxShadow:
-                        "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
-                  }:{})
+                    ...(isMobile
+                      ? {
+                          borderRadius: "25px",
+                          // padding: "2rem",
+                          boxShadow:
+                            "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                        }
+                      : {}),
                   }}
                 >
                   <Box
@@ -473,8 +505,10 @@ export default function Home() {
                         backgroundPosition: "center",
                         ...(isMobile
                           ? {
-                              width: "15.5rem",
-                              height: "11rem",
+                              width: "100%",
+                              height: "100%",
+                              objectFit:'cover',
+                              padding:'0.1rem'
                             }
                           : {
                               width: "7rem",
@@ -517,7 +551,7 @@ export default function Home() {
               gutterBottom
               mb={4}
             >
-              {t('home_help_title')}{" "}
+              {t("home_help_title")}{" "}
             </Typography>
             <Grid
               container
@@ -613,7 +647,7 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
-                {t('tab_quote_secondary')}
+                {t("tab_quote_secondary")}
               </Typography>
               <Typography
                 variant='h6'
@@ -624,7 +658,7 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
-                {t('tab_quote_primary')}
+                {t("tab_quote_primary")}
               </Typography>
             </Box>
           </Box>
@@ -649,12 +683,13 @@ export default function Home() {
                   backgroundColor: "#6CCD85",
                 },
               }}
+              href="/get-quote"
             >
-              {t('get_quote')} <MdKeyboardArrowRight />
+              {t("get_quote")} <MdKeyboardArrowRight />
             </Button>
           </Box>
         </Box>
-
+        {/* Featured services */}
         <Box sx={{ padding: "20px" }}>
           <Typography
             variant='h4'
@@ -664,15 +699,15 @@ export default function Home() {
               marginBottom: "20px",
             }}
           >
-            {t('home_featured_title')}
+            {t("home_featured_title")}
           </Typography>
           <Grid
             container
-            spacing={4}
-            sx={{ maxWidth: "80rem", margin: "auto" }}
+            // spacing={4}
+            sx={{ maxWidth: "80rem", mx: "auto" }}
           >
             {featuredServices.map((service, index) => (
-              <Grid item xs={12} sm={6} md={6} key={index}>
+              <Grid item xs={12} sm={12} md={6} key={index} sx={{ my: "2rem" }}>
                 <Card
                   sx={{
                     boxShadow:
@@ -681,9 +716,13 @@ export default function Home() {
                     maxWidth: isMobile ? "20rem" : "35rem",
                     minHeight: "22.5rem",
                     backgroundColor: service.bgColor,
-                    ...(isMobile?{}:{
-                      height:'32.5rem'
-                    })
+                    ...(isMobile
+                      ? {
+                          margin: "auto",
+                        }
+                      : {
+                          height: "32.5rem",
+                        }),
                   }}
                 >
                   <CardMedia
@@ -694,7 +733,7 @@ export default function Home() {
                       margin: "auto",
                       maxWidth: isMobile ? "18rem" : "30rem",
                       objectFit: "cover",
-                      borderRadius: "10px",
+                      borderRadius: "20px",
                       padding: isMobile ? "1rem" : "2rem",
                     }}
                   />

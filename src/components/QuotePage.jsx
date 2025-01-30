@@ -25,11 +25,13 @@ const Quote = () => {
   const theme = useTheme();
 
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [submitting, setSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
+    pincode: "",
     propertyType: { residential: false, commercial: false },
     contactMethod: "",
     powerRequirement: "",
@@ -42,6 +44,8 @@ const Quote = () => {
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.phone.trim() || !/^\d+$/.test(formData.phone))
       newErrors.phone = "Valid phone number is required.";
+    if (!formData.pincode.trim() || !/^\d+$/.test(formData.pincode))
+      newErrors.pincode = "Valid phone number is required.";
     if (
       !formData.email.trim() ||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
@@ -71,7 +75,7 @@ const Quote = () => {
     setErrors((prev) => ({ ...prev, propertyType: "" }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -81,6 +85,7 @@ const Quote = () => {
     const emailData = {
       name: formData.name,
       phone: formData.phone,
+      pincode: formData.pincode,
       email: formData.email,
       propertyType: Object.keys(formData.propertyType)
         .filter((key) => formData.propertyType[key])
@@ -88,18 +93,36 @@ const Quote = () => {
       contactMethod: formData.contactMethod,
       powerRequirement: formData.powerRequirement,
     };
-
-    emailjs
-      .send(
-        "service_id", // Replace with your EmailJS service ID
-        "template_id", // Replace with your EmailJS template ID
-        emailData,
-        "user_id" // Replace with your EmailJS user ID
-      )
-      .then(
-        () => alert("Email sent successfully!"),
-        (error) => alert("Failed to send email. Please try again.")
-      );
+    setSubmitting(true);
+    try {
+    await emailjs.send(
+      "service_0qqvdpi",
+      "template_c5yvpd5",
+      {
+        to_email: "mailtosatyamshivam@gmail.com",
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        pincode: formData.pincode,
+        message: `
+        Quotation required:
+          Name: ${emailData.name}
+          Phone: ${emailData.phone}
+          Pincode: ${emailData.pincode}
+          Email: ${emailData.email}
+          Property Type: ${emailData.propertyType}
+          Prefered contact method: ${emailData.contactMethod}
+          Power requirement: ${emailData.powerRequirement}
+        `,
+      },
+      "O2fqAR580jrXQXYvy"
+    );
+    alert("Message sent successfully!");
+  } catch (error) {
+    alert("Failed to send message. Please try again.");
+  } finally {
+    setSubmitting(false);
+  }
   };
 
   return (
@@ -215,6 +238,25 @@ const Quote = () => {
                   onChange={handleInputChange}
                   error={!!errors.phone}
                   helperText={errors.phone}
+                  sx={inputFieldSx}
+                />
+              </Box>
+
+              <Box sx={{ marginBottom: "20px" }}>
+                <Typography
+                  component='label'
+                  sx={{ fontWeight: "bold", display: "block" }}
+                >
+                  Pincode <span style={{ color: "red" }}>*</span>
+                </Typography>
+                <TextField
+                  variant='outlined'
+                  fullWidth
+                  name='pincode'
+                  value={formData.pincode}
+                  onChange={handleInputChange}
+                  error={!!errors.pincode}
+                  helperText={errors.pincode}
                   sx={inputFieldSx}
                 />
               </Box>
@@ -366,6 +408,7 @@ const Quote = () => {
               </Button> */}
               <Button
                 onClick={handleSubmit}
+                disabled={submitting}
                 variant='contained'
                 sx={{
                   backgroundColor: "#80ED99",
@@ -379,7 +422,7 @@ const Quote = () => {
                   },
                 }}
               >
-                submit
+                {submitting ? "Sending..." : "Submit"}
                 <MdKeyboardArrowRight />
               </Button>
             </form>

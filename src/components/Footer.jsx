@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Typography, Link, Box, IconButton } from "@mui/material";
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+import { BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -74,17 +75,17 @@ const Footer = () => {
             Connect with Us
           </Typography>
           <Box>
-            <IconButton href="#" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
+            <IconButton href="https://www.facebook.com/share/p/15cw5kYzPT/?mibextid=wwXIfr" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
               <Facebook />
             </IconButton>
-            <IconButton href="#" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
+            <IconButton href="https://x.com/heliomaax?s=11" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
               <Twitter />
             </IconButton>
-            <IconButton href="#" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
+            <IconButton href="https://www.instagram.com/heliomaax?igsh=MW1wZ2o3eWw3NXptZA%3D%3D&utm_source=qr" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
               <Instagram />
             </IconButton>
-            <IconButton href="#" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
-              <LinkedIn />
+            <IconButton href="https://youtube.com/@heliomaax?si=FXgFGLwHt0XSHTYt" target="_blank" sx={{ color: "white", marginRight: "10px" }}>
+              <BsYoutube />
             </IconButton>
           </Box>
         </Grid>

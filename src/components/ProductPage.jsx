@@ -17,29 +17,31 @@ import HowOnGrid from "../assets/howOnGrid.png";
 import HowOffGrid from "../assets/howOffGrid.png";
 import HowHybrid from "../assets/howHybrid.png";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const Product = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation();
 
   const content = [
     {
       image: Residential,
-      title: "Residential Solutions",
+      title: "residential_solutions",
       description: [
-        "Customized solutions for homes: We design systems tailored to your energy needs and rooftop specifications.",
-        "Seamless Installation: Our team of certified experts ensures a hassle-free installation process.",
-        "Energy savings and efficiency: Pair your rooftop solar with advanced battery solutions to store excess energy and stay powered even during outages.",
+        "residential_solutions_desc_first",
+        "residential_solutions_desc_second",
+        "residential_solutions_desc_third",
       ],
       reverse: false,
     },
     {
       image: Commercial,
-      title: "Commercial solutions",
+      title: "commercial_solutions",
       description: [
-        "Scalable Installation: Our modular systems allow you to expand your energy capacity as your business grows",
-        "Reduce Operational Cost: Reduce your business’s operating expenses by cutting down on electricity costs.",
-        "Improved Sustainability: Switching to solar energy helps your business reduce its carbon footprint and achieve green certifications.",
+        "commercial_solutions_desc_first",
+        "commercial_solutions_desc_second",
+        "commercial_solutions_desc_third",
       ],
       reverse: true,
     },
@@ -47,62 +49,73 @@ const Product = () => {
 
   const systemTypes = [
     {
-      type: "On-Grid",
+      type: "on_grid_title",
       image: HowOnGrid,
       advantages: [
-        "Uninterrupted power: The utility grid ensures an uninterrupted power supply, even when solar energy production fluctuates ",
-        "Cost-effective: On-grid systems don't require an energy storage battery, which makes them more cost-effective and easier to maintain ",
-        "High returns: On-grid systems can save money over time, and many homeowners prefer them due to their flexibility and net metering returns",
-        "Net Metering Benefits: Earn credits or payments by sending your unused solar energy back to the grid. Our systems are net-metering ready!",
+        "on_grid_adv_first",
+        "on_grid_adv_second",
+        "on_grid_adv_third",
+        "on_grid_adv_fourth",
       ],
     },
     {
-      type: "Off-Grid",
+      type: "off_grid_title",
       image: HowOffGrid,
       advantages: [
-        "Self-sufficient: Off-grid systems are designed to be entirely self-sufficient, meaning they don't require support from the public electricity grid. ",
-        "Sustainable: Solar energy is a sustainable and environmentally friendly form of green energy. ",
-        "Low operating costs: Off-grid systems can have low operating costs and reduced maintenance. ",
-        "Lithium batteries: Lithium batteries are becoming more popular in off-grid systems because they are cheaper and last longer than lead acid batteries. ",
+        "off_grid_adv_first",
+        "off_grid_adv_second",
+        "off_grid_adv_third",
+        "off_grid_adv_fourth",
       ],
     },
     {
-      type: "Hybrid",
+      type: "hybrid_grid_title",
       image: HowHybrid,
       advantages: [
-        "Energy independence: Reduces reliance on the grid by utilizing stored solar energy. ",
-        "Backup power: Provides electricity during power outages due to battery storage. ",
-        "Cost savings: Can potentially lower electricity bills by utilizing solar power during peak usage hours. ",
-        "Grid stability: Can help stabilize the grid by feeding excess solar power back in. ",
+        "hybrid_grid_adv_first",
+        "hybrid_grid_adv_second",
+        "hybrid_grid_adv_third",
+        "hybrid_grid_adv_fourth",
       ],
     },
   ];
 
   return (
-    <Box sx={{ backgroundColor: "#F2FDF5", maxWidth:'100vw',overflowX:'hidden' }}>
+    <Box
+      sx={{
+        backgroundColor: "#F2FDF5",
+        maxWidth: "100vw",
+        overflowX: "hidden",
+      }}
+    >
+     
       <Box
         sx={{
           position: "relative",
-          height: "300px",
+          width: "100vw", // Full width
+          height: isMobile? '175px' : "300px",
           color: "white",
           textAlign: "left",
+          overflow: "hidden", // Ensure SVG doesn't cause overflow
         }}
       >
+        {/* Background Image */}
         <Box
           sx={{
             position: "absolute",
             top: 0,
             left: 0,
-            right: 0,
-            bottom: 0,
+            width: "100%",
+            height: "100%",
             backgroundImage: `url(${Image2})`,
+            filter: "blur(4px)",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "blur(4px)",
             zIndex: 0,
           }}
         />
 
+        {/* Content Box */}
         <Box
           sx={{
             position: "relative",
@@ -123,7 +136,69 @@ const Product = () => {
             </Typography>
           </Box>
         </Box>
+
+        {/* Curved Bottom Effect */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: isMobile?'35px': "80px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <defs>
+              <linearGradient
+                id='waveGradient'
+                x1='0%'
+                y1='0%'
+                x2='100%'
+                y2='0%'
+              >
+                <stop offset='0%' stopColor='rgba(203,255,217,1)' />
+                <stop offset='35%' stopColor='rgba(171,253,255,1)' />
+                <stop offset='100%' stopColor='rgba(0,212,255,1)' />
+              </linearGradient>
+            </defs>
+            <path
+              fill='url(#waveGradient)'
+              fillOpacity='1'
+              d='M0,256L60,250.7C120,245,240,235,360,240C480,245,600,267,720,256C840,245,960,203,1080,186.7C1200,171,1320,181,1380,186.7L1440,192V320H0Z'
+            ></path>
+          </svg>
+        </Box>
+
+        {/* Decorative Wavy Line */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: 0,
+            width: "100%",
+            height: "30px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <path
+              fill='rgba(255,255,255,0.5)'
+              fillOpacity='1'
+              d='M0,256L120,250.7C240,245,480,235,720,240C960,245,1200,267,1320,256L1440,250V320H0Z'
+            ></path>
+          </svg>
+        </Box>
       </Box>
+
       <Box sx={{ width: "100vw" }}>
         <Box
           sx={{
@@ -134,13 +209,13 @@ const Product = () => {
           }}
         >
           <Typography
-            variant={isMobile? 'h4': 'h3'}
+            variant={isMobile ? "h4" : "h3"}
             component='h2'
             fontWeight='bold'
             gutterBottom
             mb={4}
           >
-            Rooftop solar Installation
+            {t('rooftop_solar_installation')}
           </Typography>
           {content.map((item, index) => (
             <Grid
@@ -167,13 +242,13 @@ const Product = () => {
                   }}
                 >
                   <Typography
-                    variant={isMobile? 'h5': 'h4'}
+                    variant={isMobile ? "h5" : "h4"}
                     sx={{
                       fontWeight: "bold",
                       marginBottom: "10px",
                     }}
                   >
-                    {item.title}
+                    {t(item.title)}
                   </Typography>
                   <Box
                     component='ul'
@@ -204,7 +279,7 @@ const Product = () => {
                         >
                           {idx + 1}.
                         </Typography>
-                        <Typography variant='h6'>{desc}</Typography>
+                        <Typography variant='h6'>{t(desc)}</Typography>
                       </Box>
                     ))}
                   </Box>{" "}
@@ -254,7 +329,7 @@ const Product = () => {
           >
             <Box>
               <Typography
-                variant={isMobile? 'body1': 'h6'}
+                variant={isMobile ? "body1" : "h6"}
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
@@ -262,10 +337,10 @@ const Product = () => {
                   textAlign: "left",
                 }}
               >
-                Ready to install Solar Panel at your premises.
+                {t('tab_quote_secondary')}
               </Typography>
               <Typography
-                variant={isMobile? 'body1': 'h6'}
+                variant={isMobile ? "body1" : "h6"}
                 sx={{
                   fontWeight: "bold",
                   marginBottom: "10px",
@@ -273,7 +348,7 @@ const Product = () => {
                   textAlign: "left",
                 }}
               >
-                Get your quote now!
+                {t('tab_quote_primary')}
               </Typography>
             </Box>
           </Box>
@@ -298,8 +373,9 @@ const Product = () => {
                   backgroundColor: "#6CCD85",
                 },
               }}
+              href="/get-quote"
             >
-              Get Quote <MdKeyboardArrowRight />
+              {t('get_quote')} <MdKeyboardArrowRight />
             </Button>
           </Box>
         </Box>
@@ -318,11 +394,11 @@ const Product = () => {
               textAlign: "left",
               fontWeight: "bold",
               marginBottom: "40px",
-              my:'1rem',
-              mx:'1rem'
+              my: "1rem",
+              mx: "1rem",
             }}
           >
-            System Types
+            {('system_types')}
           </Typography>
 
           {systemTypes.map((system, index) => (
@@ -331,7 +407,6 @@ const Product = () => {
               sx={{
                 marginBottom: "40px",
                 maxWidth: "80rem",
-                
               }}
             >
               <Box sx={{ margin: "auto" }}>
@@ -343,10 +418,10 @@ const Product = () => {
                     fontWeight: "bold",
                     marginBottom: "20px",
                     margin: "auto",
-                    px:'0.5rem'
+                    px: "0.5rem",
                   }}
                 >
-                  {system.type}
+                  {t(system.type)}
                 </Typography>
 
                 <Grid
@@ -377,7 +452,7 @@ const Product = () => {
                     <Box
                       sx={{
                         width: "100vw",
-                        px:'0.5rem'
+                        px: "0.5rem",
                         // padding: "20px",
                       }}
                     >
@@ -388,7 +463,7 @@ const Product = () => {
                           marginBottom: "10px",
                         }}
                       >
-                        Advantages
+                        {t('advantages')}
                       </Typography>
                       <Box
                         component='ul'
@@ -401,9 +476,7 @@ const Product = () => {
                         <List>
                           {system.advantages.map((advantage, idx) => (
                             <ListItem>
-                              <ListItemText
-                                primary={advantage}
-                              />
+                              <ListItemText primary={t(advantage)} />
                             </ListItem>
                           ))}
                         </List>
@@ -424,7 +497,7 @@ const Product = () => {
                         // padding: "20px",
                         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
                         margin: "auto",
-                        px:'0.5rem'
+                        px: "0.5rem",
                       }}
                     >
                       {/* Text Section */}
@@ -438,7 +511,7 @@ const Product = () => {
                       >
                         <Box>
                           <Typography
-                            variant={isMobile? 'body1': 'h6'}
+                            variant={isMobile ? "body1" : "h6"}
                             sx={{
                               fontWeight: "bold",
                               marginBottom: "10px",
@@ -446,10 +519,10 @@ const Product = () => {
                               textAlign: "left",
                             }}
                           >
-                            Ready to install Solar Panel at your premises.
+                            {t('tab_quote_secondary')}
                           </Typography>
                           <Typography
-                            variant={isMobile? 'body1': 'h6'}
+                            variant={isMobile ? "body1" : "h6"}
                             sx={{
                               fontWeight: "bold",
                               marginBottom: "10px",
@@ -457,7 +530,7 @@ const Product = () => {
                               textAlign: "left",
                             }}
                           >
-                            Get your quote now!
+                            {t('tab_quote_primary')}
                           </Typography>
                         </Box>
                       </Box>
@@ -475,7 +548,7 @@ const Product = () => {
                             backgroundColor: "#80ED99",
                             width: "8rem",
                             margin: "auto",
-                            marginRight:'10px',
+                            marginRight: "10px",
                             color: "#000000",
                             fontWeight: "700",
                             textTransform: "none",
@@ -483,8 +556,9 @@ const Product = () => {
                               backgroundColor: "#6CCD85",
                             },
                           }}
+                          href="/get-quote"
                         >
-                          Get Quote <MdKeyboardArrowRight />
+                          {t('get_quote')} <MdKeyboardArrowRight />
                         </Button>
                       </Box>
                     </Box>

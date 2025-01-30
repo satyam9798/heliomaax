@@ -17,6 +17,7 @@ import {
   Loom,
   ServiceArea,
   TeamExpertise,
+  Maintainence,
 } from "../constants/images";
 
 const aboutUsContent = {
@@ -111,26 +112,30 @@ const AboutUs = () => {
       <Box
         sx={{
           position: "relative",
-          height: "300px",
+          width: "100vw", // Full width
+          height: isMobile? '175px' : "300px",
           color: "white",
           textAlign: "left",
+          overflow: "hidden", 
         }}
       >
+        {/* Background Image */}
         <Box
           sx={{
             position: "absolute",
             top: 0,
             left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url(${Image2})`,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(${Maintainence})`,
+            filter: "blur(2px)",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "blur(4px)",
             zIndex: 0,
           }}
         />
 
+        {/* Content Box */}
         <Box
           sx={{
             position: "relative",
@@ -147,9 +152,70 @@ const AboutUs = () => {
               variant={isMobile ? "h5" : "h3"}
               sx={{ fontWeight: "bold", marginBottom: "10px" }}
             >
-              About Us
+              About us
             </Typography>
           </Box>
+        </Box>
+
+        {/* Curved Bottom Effect */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: isMobile?'35px': "80px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <defs>
+              <linearGradient
+                id='waveGradient'
+                x1='0%'
+                y1='0%'
+                x2='100%'
+                y2='0%'
+              >
+                <stop offset='0%' stopColor='rgba(203,255,217,1)' />
+                <stop offset='35%' stopColor='rgba(171,253,255,1)' />
+                <stop offset='100%' stopColor='rgba(0,212,255,1)' />
+              </linearGradient>
+            </defs>
+            <path
+              fill='url(#waveGradient)'
+              fillOpacity='1'
+              d='M0,256L60,250.7C120,245,240,235,360,240C480,245,600,267,720,256C840,245,960,203,1080,186.7C1200,171,1320,181,1380,186.7L1440,192V320H0Z'
+            ></path>
+          </svg>
+        </Box>
+
+        {/* Decorative Wavy Line */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: 0,
+            width: "100%",
+            height: "30px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <path
+              fill='rgba(255,255,255,0.5)'
+              fillOpacity='1'
+              d='M0,256L120,250.7C240,245,480,235,720,240C960,245,1200,267,1320,256L1440,250V320H0Z'
+            ></path>
+          </svg>
         </Box>
       </Box>
       <Box
@@ -442,7 +508,7 @@ const AboutUs = () => {
 
             {/* Description */}
             <Typography
-              variant={isMobile ? "body1" : "h6"}
+              variant={isMobile ? "h6" : "h6"}
               sx={{ whiteSpace: "pre-line" }}
               dangerouslySetInnerHTML={{ __html: box.description }}
             />

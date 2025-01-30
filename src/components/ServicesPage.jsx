@@ -32,12 +32,13 @@ import Routine from "../assets/routine.png";
 import Cleaning from "../assets/cleaning.png";
 import Repair from "../assets/repair.png";
 import SystemUpgrade from "../assets/systemUpgrade.png";
+import {PmKusumYojana, RooftopSolarExample, SolarPanel, SubsidyGov} from '../constants/images.js'
 
 const items = [
   {
     title: "Component A of the PM-KUSUM Scheme",
     description:
-      "Component A of the PM-KUSUM Scheme focuses on the installation of grid-connected ground-mounted solar power plants, with each plant having a capacity of up to 2 MW. \n \n  Farmers, cooperatives, panchayats, and Farmer Producer Organizations (FPOs) can set up these plants on unused land. The electricity generated is supplied to the power grid, providing an additional source of income to farmers through DISCOMs at pre-determined tariffs. \n \n This initiative supports farmers financially while utilizing unused land effectively.",
+      "Component A of the PM-KUSUM Scheme focuses on the installation of grid-connected ground-mounted solar power plants, with each plant having a capacity of up to 2 MW. \n \n  Farmers, cooperatives, panchayats, and Farmer Producer Organizations (FPOs) can set up these plants on unused land. The electricity generated is supplied to the power grid, providing an additional source of income to farmers through DISCOMs at pre-determined tariffs. \n This initiative supports farmers financially while utilizing unused land effectively.",
     image: Kusum,
     bgColor: "#ABFDFF",
   },
@@ -45,7 +46,7 @@ const items = [
     title: "Component B of the PM-KUSUM Scheme",
     description:
       "Component B of the PM-KUSUM Scheme involves the installation of 1.75 million standalone solar pumps for irrigation in off-grid areas. \n \n These pumps replace diesel-powered systems, reducing fuel costs and environmental impact. Farmers benefit from reliable irrigation, lower expenses, and increased agricultural productivity while promoting sustainable energy use in rural regions.",
-    image: Image2,
+    image: PmKusumYojana,
     bgColor: "#CBFFD9",
   },
   {
@@ -264,26 +265,30 @@ const Services = () => {
       <Box
         sx={{
           position: "relative",
-          height: "300px",
+          width: "100vw", // Full width
+          height: isMobile? '175px' : "300px",
           color: "white",
           textAlign: "left",
+          overflow: "hidden", // Ensure SVG doesn't cause overflow
         }}
       >
+        {/* Background Image */}
         <Box
           sx={{
             position: "absolute",
             top: 0,
             left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url(${Image2})`,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(${SolarPanel})`,
+            filter: "blur(4px)",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "blur(4px)",
             zIndex: 0,
           }}
         />
 
+        {/* Content Box */}
         <Box
           sx={{
             position: "relative",
@@ -303,6 +308,67 @@ const Services = () => {
               Services
             </Typography>
           </Box>
+        </Box>
+
+        {/* Curved Bottom Effect */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: isMobile?'35px': "80px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <defs>
+              <linearGradient
+                id='waveGradient'
+                x1='0%'
+                y1='0%'
+                x2='100%'
+                y2='0%'
+              >
+                <stop offset='0%' stopColor='rgba(203,255,217,1)' />
+                <stop offset='35%' stopColor='rgba(171,253,255,1)' />
+                <stop offset='100%' stopColor='rgba(0,212,255,1)' />
+              </linearGradient>
+            </defs>
+            <path
+              fill='url(#waveGradient)'
+              fillOpacity='1'
+              d='M0,256L60,250.7C120,245,240,235,360,240C480,245,600,267,720,256C840,245,960,203,1080,186.7C1200,171,1320,181,1380,186.7L1440,192V320H0Z'
+            ></path>
+          </svg>
+        </Box>
+
+        {/* Decorative Wavy Line */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: 0,
+            width: "100%",
+            height: "30px",
+          }}
+        >
+          <svg
+            viewBox='0 0 1440 320'
+            width='100%'
+            height='100%'
+            preserveAspectRatio='none'
+          >
+            <path
+              fill='rgba(255,255,255,0.5)'
+              fillOpacity='1'
+              d='M0,256L120,250.7C240,245,480,235,720,240C960,245,1200,267,1320,256L1440,250V320H0Z'
+            ></path>
+          </svg>
         </Box>
       </Box>
       {/* Government Subsidy Assistance */}
@@ -385,6 +451,7 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
+                    href="/get-quote"
                   >
                     Get Quote <MdKeyboardArrowRight />
                   </Button>
@@ -398,11 +465,12 @@ const Services = () => {
             <Box
               component='img'
               alt='subsidy'
-              src={Subsidy}
+              src={SubsidyGov}
               sx={{
                 width: "100%",
-                padding: "-3rem",
-                borderRadius: "30px",
+                maxHeight:'30rem',
+                // padding: "-3rem",
+                borderRadius: "20px",
                 boxShadow:
                   " rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
               }}
@@ -430,7 +498,7 @@ const Services = () => {
           Government Schemes
         </Typography>
         <Box>
-          <Carousel
+          {/* <Carousel
             autoPlay
             interval={5000}
             indicators={true}
@@ -455,13 +523,13 @@ const Services = () => {
             activeIndicatorIconButtonProps={{
               style: { color: "#22577A" },
             }}
-          >
+          > */}
             {items.map((item, index) => (
               <Box
                 key={index}
                 sx={{
                   padding: "10px",
-                  height: isMobile ? "52.5rem" : "28rem",
+                  // height: isMobile ? "52.5rem" : "28rem",
                   backgroundColor: item.bgColor,
                   padding: "20px",
                   borderRadius: "30px",
@@ -476,7 +544,7 @@ const Services = () => {
                 <Typography
                   variant='h5'
                   sx={{
-                    textAlign: "left",
+                    textAlign: "center",
                     fontWeight: "bold",
                     marginBottom: "10px",
                     py: "1rem",
@@ -510,9 +578,9 @@ const Services = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Typography
-                      variant='body1'
+                      variant='h6'
                       sx={{
-                        fontSize: "1rem",
+                        // fontSize: "1rem",
                         lineHeight: "1.5",
                         textAlign: isMobile ? "center" : "left",
                         justifyContent: "flex-start",
@@ -526,7 +594,7 @@ const Services = () => {
                 </Grid>
               </Box>
             ))}
-          </Carousel>
+          {/* </Carousel> */}
         </Box>
       </Box>
       {/* Bank Finance */}
@@ -601,6 +669,7 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
+                    href="/get-quote"
                   >
                     Get Quote <MdKeyboardArrowRight />
                   </Button>
@@ -778,6 +847,7 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
+                    href="/get-quote"
                   >
                     Get Quote <MdKeyboardArrowRight />
                   </Button>
