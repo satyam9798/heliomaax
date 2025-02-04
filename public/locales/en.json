@@ -1,46 +1,150 @@
 {
   "home_mission_title": "Mission",
   "home_mission_desc": "We aim to simplify the adoption of solar energy through government schemes, reducing dependency on non-renewable resources. By delivering reliable solutions and exceptional service, we strive to lower energy costs for households and businesses. Together, we are building a sustainable tomorrow, one solar panel at a time.",
-  
+
   "home_value_title": "Values",
   "home_value_desc": "We believe in sustainability, innovation, and integrity as the foundation of our work. We value collaboration, working closely with clients and communities to achieve shared goals. At the heart of our company is a passion for creating lasting environmental and economic impact through renewable energy.",
+  
   "home_benefits_title": "Benefits of choosing solar",
   "home_help_title": "How we help",
+  
   "learn_more": "Learn More",
   "tab_quote_secondary": "Ready to install Solar Panel at your premises.",
+  
   "tab_quote_primary": "Get your quote now!",
   "get_quote": "Get Quote",
+
   "home_featured_title": "Featured services",
+  
   "rooftop_solar_installation": "Rooftop Solar Installations",
+  
   "residential_solutions": "Residential Solutions",
   "residential_solutions_desc_first": "Customized solutions for homes: We design systems tailored to your energy needs and rooftop specifications.",
   "residential_solutions_desc_second": "Seamless Installation: Our team of certified experts ensures a hassle-free installation process.",
+
   "residential_solutions_desc_third": "Energy savings and efficiency: Pair your rooftop solar with advanced battery solutions to store excess energy and stay powered even during outages.",
-  "commercial_solutions" : "Commercial solutions",
-  "commercial_solutions_desc_first" : "Scalable Installation: Our modular systems allow you to expand your energy capacity as your business grows.",
-  "commercial_solutions_desc_second" : "Reduce Operational Cost: Reduce your business's operating expenses by cutting down on electricity costs.",
-  "commercial_solutions_desc_third" : "Improved Sustainability: Switching to solar energy helps your business reduce its carbon footprint and achieve green certifications.",
+  "commercial_solutions": "Commercial solutions",
+  "commercial_solutions_desc_first": "Scalable Installation: Our modular systems allow you to expand your energy capacity as your business grows.",
+  "commercial_solutions_desc_second": "Reduce Operational Cost: Reduce your business's operating expenses by cutting down on electricity costs.",
+  "commercial_solutions_desc_third": "Improved Sustainability: Switching to solar energy helps your business reduce its carbon footprint and achieve green certifications.",
+
   "system_types": "System Types",
   "on_grid_title": "On-Grid",
   "on_grid_adv_first": "Uninterrupted power: The utility grid ensures an uninterrupted power supply, even when solar energy production fluctuates.",
   "on_grid_adv_second": "Cost-effective: On-grid systems don't require an energy storage battery, which makes them more cost-effective and easier to maintain.",
   "on_grid_adv_third": "High returns: On-grid systems can save money over time, and many homeowners prefer them due to their flexibility and net metering returns",
+
   "on_grid_adv_fourth": "Net Metering Benefits: Earn credits or payments by sending your unused solar energy back to the grid. Our systems are net-metering ready!",
   "off_grid_title": "Off-Grid",
   "off_grid_adv_first": "Self-sufficient: Off-grid systems are designed to be entirely self-sufficient, meaning they don't require support from the public electricity grid.",
   "off_grid_adv_second": "Sustainable: Solar energy is a sustainable and environmentally friendly form of green energy.",
   "off_grid_adv_third": "Low operating costs: Off-grid systems can have low operating costs and reduced maintenance.",
+
   "off_grid_adv_fourth": "Lithium batteries: Lithium batteries are becoming more popular in off-grid systems because they are cheaper and last longer than lead acid batteries.",
   "hybrid_grid_title": "Hybrid",
   "hybrid_grid_adv_first": "Energy independence: Reduces reliance on the grid by utilizing stored solar energy.",
   "hybrid_grid_adv_second": "Backup power: Provides electricity during power outages due to battery storage.",
   "hybrid_grid_adv_third": "Cost savings: Can potentially lower electricity bills by utilizing solar power during peak usage hours.",
   "hybrid_grid_adv_fourth": "Grid stability: Can help stabilize the grid by feeding excess solar power back in.",
+
   "advantages": "Advantages",
 
+  "about_company_desc": "We help individuals and businesses install solar panels easily and affordably using government schemes. Our mission is to make renewable energy accessible to everyone, reducing electricity costs and protecting the environment. With a focus on quality, we provide end-to-end support, from consultation to installation. Our team ensures you get the best benefits from government subsidies and schemes. Join us in creating a greener and sustainable future for all.",
 
+  "government_subsidy_assistance": "Government Subsidy Assistance",
+  "government_subsidy_assistance_desc": "We understand that transitioning to solar energy is not just an environmentally conscious decision but also a smart financial investment. To make this transition even easier, we provide comprehensive assistance in availing government subsidies and incentives. Contact us today to learn more about the subsidies available for your solar installation and start your journey toward energy independence. Contact us today to learn more about the subsidies available for your solar installation and start your journey toward energy independence.",
+  "goverment_schemes": "Government Schemes",
 
+  "component_a_scheme_title": "Component A of the PM-KUSUM Scheme",
+  "component_a_scheme_desc": "Component A of the PM-KUSUM Scheme focuses on the installation of grid-connected ground-mounted solar power plants, with each plant having a capacity of up to 2 MW. \n \n  Farmers, cooperatives, panchayats, and Farmer Producer Organizations (FPOs) can set up these plants on unused land. The electricity generated is supplied to the power grid, providing an additional source of income to farmers through DISCOMs at pre-determined tariffs. \n \n This initiative supports farmers financially while utilizing unused land effectively.",
+  "component_b_scheme_title": "Component B of the PM-KUSUM Scheme",
+
+  "component_b_scheme_desc": "Component B of the PM-KUSUM Scheme involves the installation of 1.75 million standalone solar pumps for irrigation in off-grid areas. \n \n These pumps replace diesel-powered systems, reducing fuel costs and environmental impact. Farmers benefit from reliable irrigation, lower expenses, and increased agricultural productivity while promoting sustainable energy use in rural regions.",
+  "surya_yojana_scheme_title": "The PM Surya Urja Ghar Scheme",
+  "surya_yojana_scheme_desc": "The PM Surya Urja Ghar scheme, part of the PM KUSUM initiative, promotes the installation of rooftop solar systems, particularly for farmers, to encourage clean energy use.  \n \n The program offers subsidies, technical support, and financial incentives to make solar energy more accessible, aiming to reduce dependence on traditional power sources and enhance sustainability.",
+
+  "bank_finance_title": "Bank Finance Assistance",
+
+  "bank_finance_desc": "We believe that adopting solar energy should be accessible to everyone, regardless of budget constraints. We're here to bridge the gap between your solar ambitions and financial limitations. \n \n With our bank finance facilitation services, you can enjoy the benefits of clean, renewable energy without financial stress.",
+  "how_we_help": "How we help",
+
+  "bank_flexible_financing_title": "Flexible Financing Options",
+  "bank_flexible_financing_desc": "We partner with leading banks and financial institutions to offer a variety of financing plans tailored to your needs, including low-interest loans and EMI.",
+
+  "bank_loan_eligibility_title": "Loan Eligibility Guidance",
+  "bank_loan_eligibility_desc": "Our experts assess your financial profile to determine eligibility and recommend the best loan options for your solar project.",
+
+  "bank_documentation_support_title": "Documentation Support",
+  "bank_documentation_support_desc": "From preparing loan applications to submitting required paperwork, we assist you at every step, making the financing process smooth.",
+
+  "bank_expedited_approvals_title": "Expedited Approvals",
+  "bank_expedited_approvals_desc": "With our strong relationships with financial institutions, we help expedite loan approvals so you can kick-start your solar journey without delays.",
+
+  "discom_approval_support_title": "DisCom Approval Support",
+  "discom_approval_support_desc": "Obtaining approvals from electricity distribution companies (DISCOM) is a critical step in your solar installation journey, but it doesn't have to be overwhelming. We ensure that obtaining DISCOM approvals is a smooth and stress-free experience. \n \n Let us handle the paperwork and processes so you can focus on enjoying the benefits of clean, renewable energy. \n \n Contact us today to get started on your solar project!",
+
+  "discom_understanding_process_title": "Understanding the Process",
+  "discom_understanding_process_desc": "We guide you through the DISCOM approval process, ensuring you understand all the necessary steps, from application submission to final approval.",
+
+  "discom_documentation_preparation_title": "Documentation Preparation",
+  "discom_documentation_preparation_desc": "Our team assists in preparing and verifying all required documents, including application forms, technical reports, and system layouts.",
+
+  "discom_net_metering_title": "Net Metering Applications",
+  "discom_net_metering_desc": "For grid-connected solar systems, we help you apply for net metering, enabling you to export excess energy to the grid and earn credits or payments.",
+
+  "discom_end_to_end_support_title": "End-to-End Support",
+  "discom_end_to_end_support_desc": "From application submission to approval receipt, we stay by your side, providing updates and resolving any challenges that arise during the process.",
+
+  "installation_and_maintenance_services": "Installation and Maintenance Services",
+
+    "installation_site_assessment_title": "Site Assessment",
+    "installation_site_assessment_desc": "A detailed survey of your rooftop or ground area to evaluate solar energy potential, shading, and structural integrity.",
   
+    "installation_professional_installation_title": "Professional Installation",
+    "installation_professional_installation_desc": "Expert technicians install the solar panels, inverters, and other components.",
+  
+    "installation_system_testing_title": "System Testing",
+    "installation_system_testing_desc": "Comprehensive testing of the installed system to ensure it operates efficiently and meets safety and regulatory standards.",
+  
+    "maintenance_customer_title": "Customer Guidance",
+    "maintenance_customer_desc": "Hands-on guidance to help you understand system operation, monitoring, and maintenance for optimal usage.",
+  
+    "maintenance_routine_inspections_title": "Routine Inspections",
+    "maintenance_routine_inspections_desc": "Regular check-ups to identify potential issues and ensure the system is functioning as expected.",
+  
+    "maintenance_cleaning_services_title": "Cleaning Services",
+    "maintenance_cleaning_services_desc": "Removal of dust, dirt, and debris from solar panels to maintain maximum energy generation.",
+  
+    "maintenance_repairs_troubleshooting_title": "Repairs and Troubleshooting",
+    "maintenance_repairs_troubleshooting_desc": "Identification and resolution of issues with inverters, panels, wiring etc. to minimize downtime.",
+  
+    "maintenance_system_upgrades_title": "System Upgrades",
+    "maintenance_system_upgrades_desc": "Implementation of upgrades to enhance system performance or adapt to changing energy needs.",
+
+      "about_us_title": "Empowering the Future with Sustainable Energy",
+      "about_us_desc": "We are dedicated to transforming how energy is consumed by making renewable energy accessible and affordable. Since our inception, we've been at the forefront of the solar energy revolution, empowering homes, businesses, and industries with innovative solar solutions. \n \n Our mission is to create a sustainable future by reducing dependence on non-renewable resources while enabling our customers to save on energy costs. With a strong commitment to excellence, we pride ourselves on delivering high-quality installations, exceptional service, and long-lasting value.",
+    
+      "why_choose_expertise_title": "Expertise in Sustainable Energy Solutions",
+      "why_choose_commitment_title": "Commitment to Quality and Customer Satisfaction",
+      "why_choose_proven_title": "Proven Track Record of Successful Installations",
+      "why_choose_competitive_title": "Competitive Pricing and Government Scheme Benefits",
+
+      "collaborator_desc": "We are proud to collaborate with leading companies in the solar energy industry, including top manufacturers, technology providers, and financial institutions. These partnerships enable us to deliver innovative and reliable solutions tailored to our customer's needs. By combining our expertise with the resources and experience of our partners, we ensure every project meets the highest standards of quality, efficiency, and sustainability.",
+
+      "business_year_desc": "Although we are a new company, we bring a wealth of experience through successful collaborations with established solar energy providers. Our team has played a key role in completing numerous projects, ranging from residential installations to large-scale commercial and industrial systems. \n \n By leveraging our partnerships and expertise, we've quickly built a reputation for delivering reliable, high-quality solar energy solutions that meet diverse client needs.",
+    
+      "business_experience": "Years of Collective Experience",
+      "business_projects": "Projects Completed Through Collaborations",
+      "business_capacity": "kW Solar Capacity Installed",
+      "business_satisfaction": "Customer Satisfaction Rate",
+    
+      "service_area_title": "Service Area Coverage",
+      "service_area_desc": "We are proud to serve customers across 15+ states, ensuring access to premium solar solutions no matter where you are. \n\n Whether it's a rural residence, a bustling city office, or a large industrial plant, our team delivers tailored solutions to meet your unique needs.",
+    
+      "team_expertise_title": "Team Expertise",
+      "team_expertise_desc": "Our team of certified professionals brings together decades of experience in solar technology, energy efficiency, and project management. \n\n From expert engineers to skilled technicians, every member of our team is dedicated to ensuring the seamless installation and maintenance of your solar system.",
+    
+
   "ABOUT COMPANY": "About Company",
   "PM Kusum 'A' Yojana": "PM Kusum 'A' Yojana",
   "Pradhan Mantri Kisan Urja Suraksha evam Uthhan Mahabhiyan.": "Pradhan Mantri Kisan Urja Suraksha evam Uthhan Mahabhiyan.",
@@ -92,6 +196,6 @@
   "System Types": "System Types",
   "On-Grid": "On-Grid",
   "Off-Grid": "Off-Grid",
-  "Hybrid": "Hybrid",
-  "about_company_desc": "We help individuals and businesses install solar panels easily and affordably using government schemes. Our mission is to make renewable energy accessible to everyone, reducing electricity costs and protecting the environment. With a focus on quality, we provide end-to-end support, from consultation to installation. Our team ensures you get the best benefits from government subsidies and schemes. Join us in creating a greener and sustainable future for all."
-}
+  "Hybrid": "Hybrid"
+  }
+
