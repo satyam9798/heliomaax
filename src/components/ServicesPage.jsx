@@ -32,116 +32,97 @@ import Routine from "../assets/routine.png";
 import Cleaning from "../assets/cleaning.png";
 import Repair from "../assets/repair.png";
 import SystemUpgrade from "../assets/systemUpgrade.png";
-import {PmKusumYojana, RooftopSolarExample, SolarPanel, SubsidyGov} from '../constants/images.js'
+import {
+  PmKusumYojana,
+  RooftopSolarExample,
+  SolarEnergy,
+  SolarPanel,
+  SubsidyGov,
+} from "../constants/images.js";
+import { useTranslation } from "react-i18next";
 
 const items = [
   {
-    title: "Component A of the PM-KUSUM Scheme",
-    description:
-      "Component A of the PM-KUSUM Scheme focuses on the installation of grid-connected ground-mounted solar power plants, with each plant having a capacity of up to 2 MW. \n \n  Farmers, cooperatives, panchayats, and Farmer Producer Organizations (FPOs) can set up these plants on unused land. The electricity generated is supplied to the power grid, providing an additional source of income to farmers through DISCOMs at pre-determined tariffs. \n This initiative supports farmers financially while utilizing unused land effectively.",
+    title: "component_a_scheme_title",
+    description: "component_a_scheme_desc",
     image: Kusum,
     bgColor: "#ABFDFF",
   },
   {
-    title: "Component B of the PM-KUSUM Scheme",
-    description:
-      "Component B of the PM-KUSUM Scheme involves the installation of 1.75 million standalone solar pumps for irrigation in off-grid areas. \n \n These pumps replace diesel-powered systems, reducing fuel costs and environmental impact. Farmers benefit from reliable irrigation, lower expenses, and increased agricultural productivity while promoting sustainable energy use in rural regions.",
+    title: "component_b_scheme_title",
+    description: "component_b_scheme_desc",
     image: PmKusumYojana,
     bgColor: "#CBFFD9",
   },
   {
-    title: "The PM Surya Urja Ghar Scheme",
-    description:
-      "The PM Surya Urja Ghar scheme, part of the PM KUSUM initiative, promotes the installation of rooftop solar systems, particularly for farmers, to encourage clean energy use.  \n \n The program offers subsidies, technical support, and financial incentives to make solar energy more accessible, aiming to reduce dependence on traditional power sources and enhance sustainability.",
+    title: "surya_yojana_scheme_title",
+    description: "surya_yojana_scheme_desc",
     image: Bijli,
     bgColor: "#ABFDFF",
   },
 ];
 
 const bankService = {
-  title: "Bank Finance Assistance",
-  description:
-    "We believe that adopting solar energy should be accessible to everyone, regardless of budget constraints. We're here to bridge the gap between your solar ambitions and financial limitations. \n \n With our bank finance facilitation services, you can enjoy the benefits of clean, renewable energy without financial stress.",
+  title: "bank_finance_title",
+  description: "bank_finance_desc",
   image: Bank,
   bgColor: "#CBFFD9",
 };
 const bankContent = [
   {
-    title: "Flexible Financing Options",
-    description:
-      "We partner with leading banks and financial institutions to offer a variety of financing plans tailored to your needs, including low-interest loans and EMI.",
+    title: "bank_flexible_financing_title",
+    description: "bank_flexible_financing_desc",
     image: HelpGuidance,
     bgColor: "#CBFFD9",
   },
   {
-    title: "Loan Eligibility Guidance",
-    description:
-      "Our experts assess your financial profile to determine eligibility and recommend the best loan options for your solar project.",
+    title: "bank_loan_eligibility_title",
+    description: "bank_loan_eligibility_desc",
     image: HelpEligible,
     bgColor: "#ABFDFF",
   },
   {
-    title: "Documentation Support",
-    description:
-      "From preparing loan applications to submitting required paperwork, we assist you at every step, making the financing process smooth.",
+    title: "bank_documentation_support_title",
+    description: "bank_documentation_support_desc",
     image: HelpDocument,
     bgColor: "#CBFFD9",
   },
   {
-    title: "Expedited Approvals",
-    description:
-      "With our strong relationships with financial institutions, we help expedite loan approvals so you can kick-start your solar journey without delays.",
+    title: "bank_expedited_approvals_title",
+    description: "bank_expedited_approvals_desc",
     image: HelpApproval,
     bgColor: "#ABFDFF",
   },
 ];
 
 const discomService = {
-  title: "DisCom Approval Support",
-  description:
-    "Obtaining approvals from electricity distribution companies (DISCOM) is a critical step in your solar installation journey, but it doesn't have to be overwhelming. We ensure that obtaining DISCOM approvals is a smooth and stress-free experience. \n \n Let us handle the paperwork and processes so you can focus on enjoying the benefits of clean, renewable energy. \n \n Contact us today to get started on your solar project!",
-  image: Discom,
+  title: "discom_approval_support_title",
+  description: "discom_approval_support_desc",
+  image: SolarEnergy,
 };
+
 const discomContent = [
   {
-    title: "Understanding the Process",
-    description:
-      "We guide you through the DISCOM approval process, ensuring you understand all the necessary steps, from application submission to final approval.",
+    title: "discom_understanding_process_title",
+    description: "discom_understanding_process_desc",
     image: HelpEligible,
     bgColor: "#CBFFD9",
   },
   {
-    title: "Documentation Preparation",
-    description:
-      "Our team assists in preparing and verifying all required documents, including application forms, technical reports, and system layouts.",
+    title: "discom_documentation_preparation_title",
+    description: "discom_documentation_preparation_desc",
     image: HelpDocument,
     bgColor: "#ABFDFF",
   },
-  // {
-  //   title: "Liaison with DISCOM",
-  //   description:
-  //     "We act as your representative, coordinating directly with DISCOM officials to address any queries, expedite approvals, and avoid unnecessary delays.",
-  //   image: HelpGuidance,
-  //   bgColor: "#CBFFD9",
-  // },
   {
-    title: "Net Metering Applications",
-    description:
-      "For grid-connected solar systems, we help you apply for net metering, enabling you to export excess energy to the grid and earn credits or payments.",
+    title: "discom_net_metering_title",
+    description: "discom_net_metering_desc",
     image: HelpApproval,
     bgColor: "#CBFFD9",
   },
-  // {
-  //   title: "Compliance with Regulations",
-  //   description:
-  //     "Our experts ensure your solar system meets all technical and safety standards set by DISCOM, preventing potential rejections or penalties.",
-  //   image: HelpTransperancy,
-  //   bgColor: "#ABFDFF",
-  // },
   {
-    title: "End-to-End Support",
-    description:
-      "From application submission to approval receipt, we stay by your side, providing updates and resolving any challenges that arise during the process.",
+    title: "discom_end_to_end_support_title",
+    description: "discom_end_to_end_support_desc",
     image: HelpApproval,
     bgColor: "#ABFDFF",
   },
@@ -150,73 +131,67 @@ const discomContent = [
 const installationData = [
   {
     type: "Installation",
-    title: "Site Assessment",
+    title: "installation_site_assessment_title",
+    description: "installation_site_assessment_desc",
     image: Site,
     bgColor: "#CBFFD9",
-    description:
-      "A detailed survey of your rooftop or ground area to evaluate solar energy potential, shading, and structural integrity.",
   },
   {
     type: "Installation",
-    title: "Professional Installation",
+    title: "installation_professional_installation_title",
+    description: "installation_professional_installation_desc",
     image: Support,
     bgColor: "#ABFDFF",
-    description:
-      "Expert technicians install the solar panels, inverters, and other components.",
   },
   {
     type: "Installation",
-    title: "System Testing",
+    title: "installation_system_testing_title",
+    description: "installation_system_testing_desc",
     image: SystemTesting,
     bgColor: "#CBFFD9",
-    description:
-      "Comprehensive testing of the installed system to ensure it operates efficiently and meets safety and regulatory standards.",
   },
   {
     type: "Maintenance",
-    title: "Customer",
+    title: "maintenance_customer_title",
+    description: "maintenance_customer_desc",
     image: Customer,
     bgColor: "#ABFDFF",
-    description:
-      "Hands-on guidance to help you understand system operation, monitoring, and maintenance for optimal usage.",
   },
   {
     type: "Maintenance",
-    title: "Routine Inspections",
+    title: "maintenance_routine_inspections_title",
+    description: "maintenance_routine_inspections_desc",
     image: Routine,
     bgColor: "#CBFFD9",
-    description:
-      "Regular check-ups to identify potential issues and ensure the system is functioning as expected.",
   },
   {
     type: "Maintenance",
-    title: "Cleaning Services",
+    title: "maintenance_cleaning_services_title",
+    description: "maintenance_cleaning_services_desc",
     image: Cleaning,
     bgColor: "#ABFDFF",
-    description:
-      "Removal of dust, dirt, and debris from solar panels to maintain maximum energy generation.",
   },
   {
     type: "Maintenance",
-    title: "Repairs and Troubleshooting",
+    title: "maintenance_repairs_troubleshooting_title",
+    description: "maintenance_repairs_troubleshooting_desc",
     image: Repair,
     bgColor: "#CBFFD9",
-    description:
-      "Identification and resolution of issues with inverters, panels, wiring etc. minimize downtime.",
   },
   {
     type: "Maintenance",
-    title: "System Upgrades",
+    title: "maintenance_system_upgrades_title",
+    description: "maintenance_system_upgrades_desc",
     image: SystemUpgrade,
     bgColor: "#ABFDFF",
-    description:
-      "Implementation of upgrades to enhance system performance or adapt to changing energy needs.",
   },
 ];
 
 const Services = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation();
+
   const carouselRef = useRef();
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -260,13 +235,19 @@ const Services = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#F2FDF5", maxWidth:'100vw',overflowX:'hidden' }}>
+    <Box
+      sx={{
+        backgroundColor: "#F2FDF5",
+        maxWidth: "100vw",
+        overflowX: "hidden",
+      }}
+    >
       {/* image section */}
       <Box
         sx={{
           position: "relative",
           width: "100vw", // Full width
-          height: isMobile? '175px' : "300px",
+          height: isMobile ? "175px" : "300px",
           color: "white",
           textAlign: "left",
           overflow: "hidden", // Ensure SVG doesn't cause overflow
@@ -317,7 +298,7 @@ const Services = () => {
             bottom: 0,
             left: 0,
             width: "100%",
-            height: isMobile?'35px': "80px",
+            height: isMobile ? "35px" : "80px",
           }}
         >
           <svg
@@ -388,232 +369,7 @@ const Services = () => {
           mb={4}
           textAlign='center'
         >
-          Government Subsidy Assistance{" "}
-        </Typography>
-        <Grid
-          container
-          spacing={4}
-          direction={isMobile ? "column-reverse" : "row-reverse"}
-          alignItems='start'
-          justifyContent='space-between'
-          sx={{ marginBottom: "40px" }}
-        >
-          {/* Text Section */}
-          <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                textAlign: "left",
-                padding: isMobile ? "0 10px" : "0",
-              }}
-            >
-              <Box
-                component='ul'
-                sx={{
-                  listStyleType: "none",
-                  padding: 0,
-                  margin: 0,
-                  textAlign: "left",
-                }}
-              >
-                <Box
-                  component='li'
-                  sx={{
-                    marginBottom: "8px",
-                  }}
-                >
-                  <Typography
-                    variant='h6'
-                    sx={{ marginBottom: "2.5rem", flexDirection: "left" }}
-                  >
-                    We understand that transitioning to solar energy is not just
-                    an environmentally conscious decision but also a smart
-                    financial investment. To make this transition even easier,
-                    we provide comprehensive assistance in availing government
-                    subsidies and incentives. Contact us today to learn more
-                    about the subsidies available for your solar installation
-                    and start your journey toward energy independence.
-                  </Typography>
-                  <Typography variant='h6' sx={{ marginBottom: "2.5rem" }}>
-                    <strong>Contact us today </strong>to learn more about the
-                    subsidies available for your solar installation and start
-                    your journey toward energy independence.
-                  </Typography>
-                  <Button
-                    variant='contained'
-                    sx={{
-                      backgroundColor: "#80ED99",
-                      width: "8rem",
-                      margin: "auto",
-                      color: "#000000",
-                      fontWeight: "700",
-                      textTransform: "none",
-                      "&:hover": {
-                        backgroundColor: "#6CCD85",
-                      },
-                    }}
-                    href="/get-quote"
-                  >
-                    Get Quote <MdKeyboardArrowRight />
-                  </Button>
-                </Box>
-              </Box>{" "}
-            </Box>
-          </Grid>
-
-          {/* Image Section */}
-          <Grid item xs={12} md={6}>
-            <Box
-              component='img'
-              alt='subsidy'
-              src={SubsidyGov}
-              sx={{
-                width: "100%",
-                maxHeight:'30rem',
-                // padding: "-3rem",
-                borderRadius: "20px",
-                boxShadow:
-                  " rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
-              }}
-            />
-          </Grid>
-        </Grid>
-      </Box>
-      {/* Goverment schemes */}
-      <Box
-        sx={{
-          padding: "20px",
-          maxWidth: "90rem",
-          margin: "auto",
-          marginTop: "1.5rem",
-        }}
-      >
-        <Typography
-          variant={isMobile ? "h4" : "h3"}
-          component='h2'
-          fontWeight='bold'
-          gutterBottom
-          mb={4}
-          textAlign='center'
-        >
-          Government Schemes
-        </Typography>
-        <Box>
-          {/* <Carousel
-            autoPlay
-            interval={5000}
-            indicators={true}
-            navButtonsAlwaysVisible={false}
-            animation='slide'
-            indicatorContainerProps={{
-              style: {
-                position: "relative",
-                bottom: "0px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                zIndex: 1,
-              },
-            }}
-            indicatorIconButtonProps={{
-              style: {
-                color: "grey",
-                width: "20px",
-                height: "40px",
-              },
-            }}
-            activeIndicatorIconButtonProps={{
-              style: { color: "#22577A" },
-            }}
-          > */}
-            {items.map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  padding: "10px",
-                  // height: isMobile ? "52.5rem" : "28rem",
-                  backgroundColor: item.bgColor,
-                  padding: "20px",
-                  borderRadius: "30px",
-                  maxWidth: "62.5vw",
-                  margin: "0 auto",
-                  marginTop: "20px",
-                  marginBottom: "3rem",
-                  boxShadow:
-                    "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
-                }}
-              >
-                <Typography
-                  variant='h5'
-                  sx={{
-                    textAlign: "center",
-                    fontWeight: "bold",
-                    marginBottom: "10px",
-                    py: "1rem",
-                  }}
-                >
-                  {item.title}
-                </Typography>
-                <Grid
-                  container
-                  spacing={2}
-                  direction={isMobile ? "column" : "row"}
-                  alignItems='center'
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <Grid item xs={12} sm={6}>
-                    <Box
-                      component='img'
-                      src={item.image}
-                      alt={`Image for ${item.title}`}
-                      sx={{
-                        width: "100%",
-                        height: isMobile ? "15rem" : "20rem",
-                        borderRadius: "8px",
-                        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Typography
-                      variant='h6'
-                      sx={{
-                        // fontSize: "1rem",
-                        lineHeight: "1.5",
-                        textAlign: isMobile ? "center" : "left",
-                        justifyContent: "flex-start",
-                        alignItems: "flex-start",
-                        whiteSpace: "pre-line",
-                      }}
-                    >
-                      {item.description}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Box>
-            ))}
-          {/* </Carousel> */}
-        </Box>
-      </Box>
-      {/* Bank Finance */}
-      <Box
-        sx={{
-          padding: "20px",
-          maxWidth: "90rem",
-          margin: "auto",
-          marginTop: "1rem",
-        }}
-      >
-        <Typography
-          variant='h3'
-          component='h2'
-          fontWeight='bold'
-          gutterBottom
-          mb={4}
-        >
-          {bankService.title}{" "}
+          {t("government_subsidy_assistance")}{" "}
         </Typography>
         <Grid
           container
@@ -654,7 +410,7 @@ const Services = () => {
                       whiteSpace: "pre-line",
                     }}
                   >
-                    {bankService.description}
+                    {t("government_subsidy_assistance_desc")}
                   </Typography>
                   <Button
                     variant='contained'
@@ -669,9 +425,203 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
-                    href="/get-quote"
+                    href='/get-quote'
                   >
-                    Get Quote <MdKeyboardArrowRight />
+                    {t("get_quote")}
+                    <MdKeyboardArrowRight />
+                  </Button>
+                </Box>
+              </Box>{" "}
+            </Box>
+          </Grid>
+
+          {/* Image Section */}
+          <Grid item xs={12} md={6}>
+            <Box
+              component='img'
+              alt='subsidy'
+              src={SubsidyGov}
+              sx={{
+                width: "100%",
+                maxHeight: "25rem",
+                // padding: "-3rem",
+                borderRadius: "20px",
+                boxShadow:
+                  " rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
+              }}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+      {/* Goverment schemes */}
+      <Box
+        sx={{
+          padding: "20px",
+          maxWidth: "90rem",
+          margin: "auto",
+          marginTop: "1.5rem",
+        }}
+      >
+        <Typography
+          variant={isMobile ? "h4" : "h3"}
+          component='h2'
+          fontWeight='bold'
+          gutterBottom
+          mb={4}
+          textAlign='center'
+        >
+          {t("goverment_schemes")}
+        </Typography>
+        <Box>
+          {items.map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                padding: "10px",
+                // height: isMobile ? "52.5rem" : "28rem",
+                backgroundColor: item.bgColor,
+                padding: "20px",
+                borderRadius: "30px",
+                maxWidth: "62.5vw",
+                margin: "0 auto",
+                marginTop: "20px",
+                marginBottom: "3rem",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
+              }}
+            >
+              <Typography
+                variant='h5'
+                sx={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  marginBottom: "10px",
+                  py: "1rem",
+                }}
+              >
+                {t(item.title)}
+              </Typography>
+              <Grid
+                container
+                spacing={2}
+                direction={isMobile ? "column" : "row"}
+                alignItems='center'
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                }}
+              >
+                <Grid item xs={12} sm={6}>
+                  <Box
+                    component='img'
+                    src={item.image}
+                    alt={`Image for ${item.title}`}
+                    sx={{
+                      width: "100%",
+                      height: isMobile ? "15rem" : "20rem",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Typography
+                    variant='h6'
+                    sx={{
+                      // fontSize: "1rem",
+                      lineHeight: "1.5",
+                      textAlign: isMobile ? "center" : "left",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {t(item.description)}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Box>
+          ))}
+          {/* </Carousel> */}
+        </Box>
+      </Box>
+      {/* Bank Finance */}
+      <Box
+        sx={{
+          padding: "20px",
+          maxWidth: "90rem",
+          margin: "auto",
+          marginTop: "1rem",
+        }}
+      >
+        <Typography
+          variant={isMobile ? "h4" : "h3"}
+          component='h2'
+          fontWeight='bold'
+          gutterBottom
+          mb={4}
+          textAlign={"center"}
+        >
+          {t(bankService.title)}{" "}
+        </Typography>
+        <Grid
+          container
+          spacing={4}
+          direction={isMobile ? "column-reverse" : "row-reverse"}
+          alignItems='start'
+          justifyContent='space-between'
+          sx={{ marginBottom: "40px" }}
+        >
+          {/* Text Section */}
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                textAlign: "left",
+                padding: isMobile ? "0 10px" : "0",
+              }}
+            >
+              <Box
+                component='ul'
+                sx={{
+                  listStyleType: "none",
+                  padding: 0,
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                <Box
+                  component='li'
+                  sx={{
+                    marginBottom: "8px",
+                  }}
+                >
+                  <Typography
+                    variant='h6'
+                    sx={{
+                      marginBottom: "2.5rem",
+                      flexDirection: "left",
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {t(bankService.description)}
+                  </Typography>
+                  <Button
+                    variant='contained'
+                    sx={{
+                      backgroundColor: "#80ED99",
+                      width: "8rem",
+                      margin: "auto",
+                      color: "#000000",
+                      fontWeight: "700",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#6CCD85",
+                      },
+                    }}
+                    href='/get-quote'
+                  >
+                    {t("get_quote")} <MdKeyboardArrowRight />
                   </Button>
                 </Box>
               </Box>{" "}
@@ -712,7 +662,7 @@ const Services = () => {
           gutterBottom
           mb={4}
         >
-          How we help{" "}
+          {t("home_help_title")}{" "}
         </Typography>
         <Grid
           container
@@ -733,8 +683,8 @@ const Services = () => {
               <Box
                 sx={{
                   // margin:'2rem',
-                  width:'15.5rem',
-                  height:'15.5rem',
+                  width: "15.5rem",
+                  height: "15.5rem",
                   backgroundColor: item.bgColor,
                   borderRadius: "25px",
                   padding: "2rem",
@@ -744,7 +694,8 @@ const Services = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   // height: "150px", // Ensure square shape
-                  boxShadow: "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                  boxShadow:
+                    "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
                   // boxShadow: "rgba(100, 100, 111, 0.15) 8.95px 5.95px 1.6px;",
                   // minWidth: "150px",
                   transition: "transform 0.3s ease",
@@ -764,10 +715,14 @@ const Services = () => {
                   }}
                 />
                 <Typography variant='h6' fontWeight='bold'>
-                  {item.title}
+                  {t(item.title)}
                 </Typography>
-                <Typography variant='body2' color='text.secondary' fontSize={16}>
-                  {item.description}
+                <Typography
+                  variant='body2'
+                  color='text.secondary'
+                  fontSize={16}
+                >
+                  {t(item.description)}
                 </Typography>
               </Box>
             </Grid>
@@ -784,14 +739,14 @@ const Services = () => {
         }}
       >
         <Typography
-          variant={ isMobile? 'h4' : 'h3'}
-          textAlign={isMobile?'center':'left'}
+          variant={isMobile ? "h4" : "h3"}
+          textAlign={isMobile ? "center" : "left"}
           component='h2'
           fontWeight='bold'
           gutterBottom
           mb={4}
         >
-          {discomService.title}{" "}
+          {t(discomService.title)}{" "}
         </Typography>
         <Grid
           container
@@ -832,7 +787,7 @@ const Services = () => {
                       whiteSpace: "pre-line",
                     }}
                   >
-                    {discomService.description}{" "}
+                    {t(discomService.description)}{" "}
                   </Typography>
                   <Button
                     variant='contained'
@@ -847,9 +802,9 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
-                    href="/get-quote"
+                    href='/get-quote'
                   >
-                    Get Quote <MdKeyboardArrowRight />
+                    {t("get_quote")} <MdKeyboardArrowRight />
                   </Button>
                 </Box>
               </Box>{" "}
@@ -865,7 +820,7 @@ const Services = () => {
               sx={{
                 width: "100%",
                 // padding: "0rem",
-                // borderRadius: "50px",
+                borderRadius: "30px",
                 // boxShadow:
                 //   "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
               }}
@@ -890,14 +845,14 @@ const Services = () => {
           gutterBottom
           mb={4}
         >
-          How we help{" "}
+          {t("home_help_title")}{" "}
         </Typography>
         <Grid
           container
           spacing={3}
           justifyContent='center'
           alignItems='center'
-          sx={{ padding: "2rem"}}
+          sx={{ padding: "2rem" }}
         >
           {discomContent.map((item, index) => (
             <Grid
@@ -912,8 +867,8 @@ const Services = () => {
               <Box
                 sx={{
                   // margin:'2rem',
-                  width:'15.5rem',
-                  height:'15.5rem',
+                  width: "15.5rem",
+                  height: "15.5rem",
                   backgroundColor: item.bgColor,
                   borderRadius: "25px",
                   padding: "2rem",
@@ -923,7 +878,8 @@ const Services = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   // height: "150px", // Ensure square shape
-                  boxShadow: "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+                  boxShadow:
+                    "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
                   // boxShadow: "rgba(100, 100, 111, 0.15) 8.95px 5.95px 1.6px;",
                   // minWidth: "150px",
                   transition: "transform 0.3s ease",
@@ -943,10 +899,14 @@ const Services = () => {
                   }}
                 />
                 <Typography variant='h6' fontWeight='bold'>
-                  {item.title}
+                  {t(item.title)}
                 </Typography>
-                <Typography variant='body2' color='text.secondary' fontSize={16}>
-                  {item.description}
+                <Typography
+                  variant='body2'
+                  color='text.secondary'
+                  fontSize={16}
+                >
+                  {t(item.description)}
                 </Typography>
               </Box>
             </Grid>
@@ -963,7 +923,7 @@ const Services = () => {
           flexDirection={isMobile ? "column" : "row"}
         >
           <Typography variant='h4' fontWeight='bold'>
-            Installation and Maintenance Services
+            {t("installation_and_maintenance_services")}
           </Typography>
           <Box sx={{ my: "1rem", alignSelf: "flex-end" }}>
             <Button
@@ -1039,7 +999,7 @@ const Services = () => {
                   my: "0.5rem",
                 }}
               >
-                {item.type}
+                {t(item.type)}
               </Typography>
               <CardMedia
                 component='img'
@@ -1054,9 +1014,9 @@ const Services = () => {
               />
               <CardContent>
                 <Typography variant='h6' fontWeight='bold'>
-                  {item.title}
+                  {t(item.title)}
                 </Typography>
-                <Typography variant='body2'>{item.description}</Typography>
+                <Typography variant='body2'>{t(item.description)}</Typography>
               </CardContent>
             </Card>
           ))}
