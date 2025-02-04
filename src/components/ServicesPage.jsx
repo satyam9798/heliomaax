@@ -9,21 +9,16 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
 import { styled } from "@mui/material/styles";
 
 import Kusum from "../assets/kusumYojana.png";
 import Bijli from "../assets/muftBijli.png";
-import Image2 from "../assets/image1.jpeg";
-import Subsidy from "../assets/subsidy.png";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Bank from "../assets/bank.png";
-import Discom from "../assets/discom.png";
 import HelpEligible from "../assets/helpElegibile.png";
 import HelpDocument from "../assets/helpDocument.png";
 import HelpApproval from "../assets/helpApproval.png";
 import HelpGuidance from "../assets/helpGuidance.png";
-import HelpTransperancy from "../assets/helpTransperancy.png";
 import Site from "../assets/siteAsessment.png";
 import Support from "../assets/support.png";
 import SystemTesting from "../assets/systemTesting.png";
@@ -34,7 +29,6 @@ import Repair from "../assets/repair.png";
 import SystemUpgrade from "../assets/systemUpgrade.png";
 import {
   PmKusumYojana,
-  RooftopSolarExample,
   SolarEnergy,
   SolarPanel,
   SubsidyGov,

@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/material";
 import emailjs from "@emailjs/browser";
-import Image2 from "../assets/image1.jpeg";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MaintainencePanel } from "../constants/images";
 

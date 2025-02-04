@@ -8,7 +8,6 @@ import {
   Typography,
   Card,
   CardContent,
-  Container,
   Grid,
   CardMedia,
   useMediaQuery,
@@ -39,8 +38,6 @@ import {
   RooftopFeature,
   RooftopSolarExample,
   SolarEnergy,
-  SolarPanel,
-  PmKusumYojana,
 } from "../constants/images";
 
 const carouselItems = [

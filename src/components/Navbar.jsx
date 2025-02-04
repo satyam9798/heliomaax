@@ -20,14 +20,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { useLanguage } from "../context/LanguageContext.js";
 import i18n from "../i18n";
-import { useNavigate } from "react-router-dom";
 
 
 
 function Navbar() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  const navigate= useNavigate();
-
 
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, changeLanguage } = useLanguage();
