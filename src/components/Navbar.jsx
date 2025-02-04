@@ -44,14 +44,14 @@ function Navbar() {
     setAnchorEl(event.currentTarget);
   };
 
+
   const handleLanguageClose = (lang) => {
     if (lang) {
-      changeLanguage(lang);
-      i18n.changeLanguage(lang);
-      localStorage.setItem("language", lang); 
+      changeLanguage(lang); 
     }
     setAnchorEl(null);
   };
+  
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
