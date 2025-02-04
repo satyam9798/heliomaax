@@ -20,6 +20,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { useLanguage } from "../context/LanguageContext.js";
 import i18n from "../i18n";
+import { Logo } from "../constants/images.js";
 
 
 
@@ -75,7 +76,7 @@ function Navbar() {
       >
         <Box sx={{ width:isMobile?"50%": "25%" }} component="a" href="/#" >
           <img
-            src={Icon}            
+            src={Logo}            
             alt="Logo"
             style={{ maxWidth:isMobile?'6rem': "15rem", maxHeight: "50px" }}
           />

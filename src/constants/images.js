@@ -21,6 +21,7 @@ import SolarEnergy from '../assets/hd/solar_energy.jpg';
 import SolarPanel from '../assets/hd/solar_panel.jpg';
 import PmKusumYojana from '../assets/hd/pm_kusum_yojana.webp';
 import SubsidyGov from '../assets/hd/subsidy_gov.png';
+import Logo from '../assets/logo_heliomaax.png';
 
 export {
   Expertise,
@@ -37,5 +38,5 @@ export {
   RooftopFeature,
   RooftopSolarExample,
   SolarZoom,
-  MuftBijliMobile, HutPanel, Maintainence, MaintainencePanel, ModiAim, SolarEnergy, SolarPanel,PmKusumYojana,SubsidyGov,
+  MuftBijliMobile, HutPanel, Maintainence, MaintainencePanel, ModiAim, SolarEnergy, SolarPanel,PmKusumYojana,SubsidyGov,Logo
 };
