@@ -14,27 +14,27 @@ const Footer = () => {
           </Typography>
           <ul style={{ padding: 0, listStyle: "none" }}>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="/about-us" color="inherit" underline="none">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="/contact-us" color="inherit" underline="none">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="get-quote" color="inherit" underline="none">
                 Get Quote
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="/services" color="inherit" underline="none">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="/products" color="inherit" underline="none">
                 Product
               </Link>
             </li>
@@ -47,23 +47,23 @@ const Footer = () => {
           </Typography>
           <ul style={{ padding: 0, listStyle: "none" }}>
             <li>
-              <Link href="#" color="inherit" underline="none">
-                Product
+              <Link href="/products" color="inherit" underline="none">
+                Products
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="/services" color="inherit" underline="none">
                 Goverment Schemes
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
+              <Link href="/services" color="inherit" underline="none">
                 Bank Finance
               </Link>
             </li>
             <li>
-              <Link href="#" color="inherit" underline="none">
-                Products
+              <Link href="/services" color="inherit" underline="none">
+                Services
               </Link>
             </li>
           </ul>
