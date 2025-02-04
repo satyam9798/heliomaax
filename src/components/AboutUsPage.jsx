@@ -2,9 +2,7 @@ import React from "react";
 import { Grid, Box, Typography, Button } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/material";
 
-import Image2 from "../assets/image1.jpeg";
 import TeamImage from "../assets/aboutMain.png";
-import { MdKeyboardArrowRight } from "react-icons/md";
 
 import {
   Expertise,
@@ -19,30 +17,30 @@ import {
   TeamExpertise,
   Maintainence,
 } from "../constants/images";
+import { useTranslation } from "react-i18next";
 
 const aboutUsContent = {
   image: TeamImage,
-  title: "Empowering the Future with Sustainable Energy",
-  description:
-    "We are dedicated to transforming how energy is consumed by making renewable energy accessible and affordable. Since our inception, we've been at the forefront of the solar energy revolution, empowering homes, businesses, and industries with innovative solar solutions. \n \n Our mission is to create a sustainable future by reducing dependence on non-renewable resources while enabling our customers to save on energy costs. With a strong commitment to excellence, we pride ourselves on delivering high-quality installations, exceptional service, and long-lasting value.",
+  title: "about_us_title",
+  description: "about_us_desc",
 };
 
 const whyChooseUs = [
   {
     image: Expertise,
-    title: "Expertise in Sustainable Energy Solutions",
+    title: "why_choose_expertise_title",
   },
   {
     image: Commitment,
-    title: "Commitment to Quality and Customer Satisfaction",
+    title: "why_choose_commitment_title",
   },
   {
     image: Proven,
-    title: "Proven Track Record of Successful Installations",
+    title: "why_choose_proven_title",
   },
   {
     image: Competitive,
-    title: "Competitive Pricing and Government Scheme Benefits",
+    title: "why_choose_competitive_title",
   },
 ];
 
@@ -60,52 +58,47 @@ const collaborators = [
     image: Loom,
   },
 ];
-const collaboratorDescription =
-  "We are proud to collaborate with leading companies in the solar energy industry, including top manufacturers, technology providers, and financial institutions. These partnerships enable us to deliver innovative and reliable solutions tailored to our customer's needs. By combining our expertise with the resources and experience of our partners, we ensure every project meets the highest standards of quality, efficiency, and sustainability";
-
-const buisnessYearDesc =
-  "Although we are a new company, we bring a wealth of experience through successful collaborations with established solar energy providers. Our team has played a key role in completing numerous projects, ranging from residential installations to large-scale commercial and industrial systems. \n \n By leveraging our partnerships and expertise, we've quickly built a reputation for delivering reliable, high-quality solar energy solutions that meet diverse client needs.";
+const collaboratorDescription = "collaborator_desc";
+const buisnessYearDesc = "business_year_desc";
 
 const buisnessData = [
   {
     value: "5+",
-    description: "Years of Collective Experience",
+    description: "business_experience",
   },
   {
     value: "50+",
-    description: "Projects Completed Through Collaborations",
+    description: "business_projects",
   },
   {
     value: "5000+",
-    description: "kW Solar Capacity Installed",
+    description: "business_capacity",
   },
   {
     value: "95%",
-    description: "Customer Satisfaction Rate",
+    description: "business_satisfaction",
   },
 ];
 
 const detailFeatures = [
   {
-    title: "Service Area Coverage",
+    title: "service_area_title",
     bgColor: "#CBFFD9",
     image: ServiceArea,
-    description: `We are proud to serve customers across <b> 15+ states</b>, ensuring access to premium solar solutions no matter where you are. 
-
-      Whether it's a rural residence, a bustling city office, or a large industrial plant, our team delivers tailored solutions to meet your unique needs.`,
+    description: "service_area_desc",
   },
   {
-    title: "Team Expertise",
+    title: "team_expertise_title",
     bgColor: "#ABFDFF",
     image: TeamExpertise,
-    description: `Our team of <b>certified professionals</b> brings together decades of experience in solar technology, energy efficiency, and project management. 
-      From expert engineers to skilled technicians, every member of our team is dedicated to ensuring the seamless installation and maintenance of your solar system.`,
+    description: "team_expertise_desc",
   },
 ];
 
 const AboutUs = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation();
 
   return (
     <Box sx={{ backgroundColor: "#F2FDF5" }}>
@@ -113,10 +106,10 @@ const AboutUs = () => {
         sx={{
           position: "relative",
           width: "100vw", // Full width
-          height: isMobile? '175px' : "300px",
+          height: isMobile ? "175px" : "300px",
           color: "white",
           textAlign: "left",
-          overflow: "hidden", 
+          overflow: "hidden",
         }}
       >
         {/* Background Image */}
@@ -164,7 +157,7 @@ const AboutUs = () => {
             bottom: 0,
             left: 0,
             width: "100%",
-            height: isMobile?'35px': "80px",
+            height: isMobile ? "35px" : "80px",
           }}
         >
           <svg
@@ -249,9 +242,9 @@ const AboutUs = () => {
                 gutterBottom
                 mb={4}
                 textAlign={isMobile ? "center" : "left"}
-                sx={{whiteSpace:'pre-line'}}
+                sx={{ whiteSpace: "pre-line" }}
               >
-                {aboutUsContent.title}
+                {t(aboutUsContent.title)}
               </Typography>
               <Box
                 component='ul'
@@ -270,9 +263,13 @@ const AboutUs = () => {
                 >
                   <Typography
                     variant='h6'
-                    sx={{ marginBottom: "2.5rem", flexDirection: "left", whiteSpace:'pre-line' }}
+                    sx={{
+                      marginBottom: "2.5rem",
+                      flexDirection: "left",
+                      whiteSpace: "pre-line",
+                    }}
                   >
-                    {aboutUsContent.description}
+                    {t(aboutUsContent.description)}
                   </Typography>
                 </Box>
               </Box>{" "}
@@ -338,7 +335,7 @@ const AboutUs = () => {
                 }}
               />
               <Typography variant='h6' fontWeight='bold'>
-                {feature.title}
+                {t(feature.title)}
               </Typography>
             </Grid>
           ))}
@@ -389,7 +386,7 @@ const AboutUs = () => {
           </Typography>
         </Typography>
         <Box sx={{ my: "4.5rem" }}>
-          <Typography variant='h6'>{collaboratorDescription}</Typography>
+          <Typography variant='h6'>{t(collaboratorDescription)}</Typography>
         </Box>
 
         {/* Images and Titles */}
@@ -434,7 +431,7 @@ const AboutUs = () => {
 
         <Box sx={{ my: "4.5rem" }}>
           <Typography variant='h6' sx={{ whiteSpace: "pre-line" }}>
-            {buisnessYearDesc}
+            {t(buisnessYearDesc)}
           </Typography>
         </Box>
 
@@ -443,10 +440,10 @@ const AboutUs = () => {
           {buisnessData.map((feature, index) => (
             <Grid item xs={12} sm={6} md={3} key={index} textAlign='center'>
               <Typography variant='h3' color={"#22577A"} fontWeight='bold'>
-                {feature.value}
+                {t(feature.value)}
               </Typography>
               <Typography variant='h6' fontWeight='bold'>
-                {feature.description}
+                {t(feature.description)}
               </Typography>
             </Grid>
           ))}
@@ -480,7 +477,7 @@ const AboutUs = () => {
               fontWeight='bold'
               my={2}
             >
-              {box.title}
+              {t(box.title)}
             </Typography>
 
             {/* Image */}
@@ -510,8 +507,9 @@ const AboutUs = () => {
             <Typography
               variant={isMobile ? "h6" : "h6"}
               sx={{ whiteSpace: "pre-line" }}
-              dangerouslySetInnerHTML={{ __html: box.description }}
-            />
+            >
+              {t(box.description)}
+            </Typography>
           </Box>
         ))}
       </Box>
