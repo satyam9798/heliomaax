@@ -20,6 +20,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 import "../styles/Home.css";
 import Image4 from "../assets/waterFarmer.jpg";
+import Image2 from "../assets/image2.jpg";
 import Offgrid from "../assets/offgrid.png";
 import Ongrid from "../assets/ongrid.png";
 import Hybrid from "../assets/hybrid.png";
@@ -36,8 +37,10 @@ import Tool4 from "../assets/tool4.png";
 import {
   MuftBijliMobile,
   RooftopFeature,
-  RooftopSolarExample, HutPanel, Maintainence, MaintainencePanel, ModiAim, SolarEnergy, SolarPanel,
-  PmKusumYojana
+  RooftopSolarExample,
+  SolarEnergy,
+  SolarPanel,
+  PmKusumYojana,
 } from "../constants/images";
 
 const carouselItems = [
@@ -45,26 +48,26 @@ const carouselItems = [
     image: Bijli,
     mobileImage: MuftBijliMobile,
     title: "PM Surya Ghar: Muft Bijli Yojana",
-    linkTo: '/services',
+    linkTo: "/services",
     description:
-    "Goverment Scheme that aims to provide free electricity to households in India.",
+      "Goverment Scheme that aims to provide free electricity to households in India.",
   },
   {
-    image: PmKusumYojana,
+    image: Image2,
     title: `PM Kusum 'A' Yojana`,
-    linkTo: '/services',
+    linkTo: "/services",
     description: "Pradhan Mantri Kisan Urja Suraksha evam Uthhan Mahabhiyan.",
   },
   {
     image: Image4,
     title: "PM Kusum 'B' Yojana",
-    linkTo: '/services',
+    linkTo: "/services",
     description: "Mukhyamantri Solar Pump Yojana.",
   },
   {
     image: RooftopSolarExample,
     title: "Powering your Future with Sustainable Energy",
-    linkTo: '/products',
+    linkTo: "/products",
     description: "Harness the Sun, Save the Planet.",
   },
 ];
@@ -76,7 +79,6 @@ const benefits = [
     image: Tool3,
     bgColor: "#CBFFD9",
     borderColor: "#90EE90",
-
   },
   {
     title: "Reduced electricity bills.",
@@ -260,7 +262,11 @@ export default function Home() {
               >
                 {t(item.description)}
               </Typography>
-              <Button variant='contained' style={style.carouselButton} href={item.linkTo}>
+              <Button
+                variant='contained'
+                style={style.carouselButton}
+                href={item.linkTo}
+              >
                 {t("learn_more")} <MdKeyboardArrowRight />
               </Button>
             </Box>
@@ -290,11 +296,11 @@ export default function Home() {
                   sx={{
                     width: isMobile ? "15rem" : "40rem",
                     height: isMobile ? "15rem" : "20rem",
-                    backgroundImage: `url(${MaintainencePanel})`,
+                    backgroundImage: `url(${SolarEnergy})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     margin: "auto",
-                    borderRadius: "10px",
+                    borderRadius: "30px",
                     padding: isMobile ? "1rem" : "2rem",
                   }}
                   alt='Solar panel installation'
@@ -324,7 +330,10 @@ export default function Home() {
                 >
                   {t("ABOUT COMPANY")}
                 </Typography>
-                <Typography variant='body1' color='text.secondary'>
+                <Typography
+                  variant={isMobile ? "body1" : "h6"}
+                  color='text.secondary'
+                >
                   {t("about_company_desc")}
                 </Typography>
               </Grid>
@@ -507,8 +516,8 @@ export default function Home() {
                           ? {
                               width: "100%",
                               height: "100%",
-                              objectFit:'cover',
-                              padding:'0.1rem'
+                              objectFit: "cover",
+                              padding: "0.1rem",
                             }
                           : {
                               width: "7rem",
@@ -683,7 +692,7 @@ export default function Home() {
                   backgroundColor: "#6CCD85",
                 },
               }}
-              href="/get-quote"
+              href='/get-quote'
             >
               {t("get_quote")} <MdKeyboardArrowRight />
             </Button>

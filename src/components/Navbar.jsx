@@ -20,11 +20,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { useLanguage } from "../context/LanguageContext.js";
 import i18n from "../i18n";
+import { useNavigate } from "react-router-dom";
 
 
 
 function Navbar() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const navigate= useNavigate();
 
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -74,11 +76,11 @@ function Navbar() {
           alignItems: "center",
         }}
       >
-        <Box sx={{ width: "25%" }}>
+        <Box sx={{ width:isMobile?"50%": "25%" }} component="a" href="/#" >
           <img
-            src={Icon}
+            src={Icon}            
             alt="Logo"
-            style={{ maxWidth:isMobile?'4rem': "15rem", maxHeight: "50px" }}
+            style={{ maxWidth:isMobile?'6rem': "15rem", maxHeight: "50px" }}
           />
         </Box>
 
@@ -128,7 +130,7 @@ function Navbar() {
         <Box
           sx={{
             // display: "flex",
-            width:isMobile?'50%': "15%",
+            width:"15%",
             justifyContent: "space-between",
               // flexGrow: 1,
             marginLeft: "16px",
@@ -159,7 +161,7 @@ function Navbar() {
           color="inherit"
           aria-label="menu"
           onClick={toggleDrawer(true)}
-          sx={{ display: { xs: "block", md: "none" }, paddingRight:'1.5rem' }}
+          sx={{ display: { xs: "block", md: "none" }, paddingRight:'1.5rem', mt:'5px' }}
         >
           <MenuIcon />
         </IconButton>

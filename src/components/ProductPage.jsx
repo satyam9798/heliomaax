@@ -88,12 +88,11 @@ const Product = () => {
         overflowX: "hidden",
       }}
     >
-     
       <Box
         sx={{
           position: "relative",
           width: "100vw", // Full width
-          height: isMobile? '175px' : "300px",
+          height: isMobile ? "175px" : "300px",
           color: "white",
           textAlign: "left",
           overflow: "hidden", // Ensure SVG doesn't cause overflow
@@ -144,7 +143,7 @@ const Product = () => {
             bottom: 0,
             left: 0,
             width: "100%",
-            height: isMobile?'35px': "80px",
+            height: isMobile ? "35px" : "80px",
           }}
         >
           <svg
@@ -215,7 +214,7 @@ const Product = () => {
             gutterBottom
             mb={4}
           >
-            {t('rooftop_solar_installation')}
+            {t("rooftop_solar_installation")}
           </Typography>
           {content.map((item, index) => (
             <Grid
@@ -337,7 +336,7 @@ const Product = () => {
                   textAlign: "left",
                 }}
               >
-                {t('tab_quote_secondary')}
+                {t("tab_quote_secondary")}
               </Typography>
               <Typography
                 variant={isMobile ? "body1" : "h6"}
@@ -348,7 +347,7 @@ const Product = () => {
                   textAlign: "left",
                 }}
               >
-                {t('tab_quote_primary')}
+                {t("tab_quote_primary")}
               </Typography>
             </Box>
           </Box>
@@ -373,9 +372,9 @@ const Product = () => {
                   backgroundColor: "#6CCD85",
                 },
               }}
-              href="/get-quote"
+              href='/get-quote'
             >
-              {t('get_quote')} <MdKeyboardArrowRight />
+              {t("get_quote")} <MdKeyboardArrowRight />
             </Button>
           </Box>
         </Box>
@@ -384,21 +383,20 @@ const Product = () => {
           sx={{
             width: "80vw",
             maxWidth: "80vw",
-            // margin:isMobile?'0': "auto",
             padding: isMobile ? "0" : "20px",
           }}
         >
           <Typography
-            variant='h4'
+            variant={isMobile ? "h4" : "h3"}
             sx={{
-              textAlign: "left",
+              textAlign: "center",
               fontWeight: "bold",
               marginBottom: "40px",
               my: "1rem",
               mx: "1rem",
             }}
           >
-            {('system_types')}
+            {t("system_types")}
           </Typography>
 
           {systemTypes.map((system, index) => (
@@ -406,13 +404,12 @@ const Product = () => {
               key={index}
               sx={{
                 marginBottom: "40px",
-                maxWidth: "80rem",
               }}
             >
               <Box sx={{ margin: "auto" }}>
                 {/* Subheader */}
                 <Typography
-                  variant='h5'
+                  variant={isMobile ? "h5" : "h4"}
                   sx={{
                     textAlign: "left",
                     fontWeight: "bold",
@@ -432,59 +429,67 @@ const Product = () => {
                   justifyContent='center'
                   sx={{ width: "100vw" }}
                 >
-                  {/* Image Section */}
-                  <Grid item xs={6} sx={{ display: "flex", px: "2rem" }}>
-                    <Box
-                      component='img'
-                      src={system.image}
-                      alt={`${system.type} Image`}
-                      sx={{
-                        width: "100%",
-                        borderRadius: "10px",
-                        maxWidth: isMobile ? "95rem" : "55rem",
-                        margin: "auto",
-                      }}
-                    />
-                  </Grid>
-
-                  {/* Advantages Section */}
-                  <Grid item xs={6} sx={{ px: "0.2rem" }}>
-                    <Box
-                      sx={{
-                        width: "100vw",
-                        px: "0.5rem",
-                        // padding: "20px",
-                      }}
-                    >
-                      <Typography
-                        variant={isMobile ? "body1" : "h4"}
-                        sx={{
-                          fontWeight: "bold",
-                          marginBottom: "10px",
-                        }}
-                      >
-                        {t('advantages')}
-                      </Typography>
+                  <Box>
+                    {/* Image Section */}
+                    <Grid item xs={6} sx={{ display: "flex", px: "2rem" }}>
                       <Box
-                        component='ul'
+                        component='img'
+                        src={system.image}
+                        alt={`${system.type} Image`}
                         sx={{
-                          listStyleType: "none",
-                          padding: 0,
-                          margin: 0,
+                          width: "100%",
+                          borderRadius: "10px",
+                          maxWidth: isMobile ? "95rem" : "55rem",
+                          margin: "auto",
+                        }}
+                      />
+                    </Grid>
+
+                    {/* Advantages Section */}
+                    <Grid item xs={6} sx={{ px: "0.2rem" }}>
+                      <Box
+                        sx={{
+                          width: "80vw",
+                          px: "0.5rem",
+                          margin: "auto",
+                          // padding: "20px",
                         }}
                       >
-                        <List>
-                          {system.advantages.map((advantage, idx) => (
-                            <ListItem>
-                              <ListItemText primary={t(advantage)} />
-                            </ListItem>
-                          ))}
-                        </List>
+                        <Typography
+                          variant={isMobile ? "body1" : "h5"}
+                          sx={{
+                            fontWeight: "bold",
+                            marginBottom: "10px",
+                          }}
+                        >
+                          {t("advantages")}
+                        </Typography>
+                        <Box
+                          component='ul'
+                          sx={{
+                            listStyleType: "none",
+                            padding: 0,
+                            margin: 0,
+                          }}
+                        >
+                          <List>
+                            {system.advantages.map((advantage, idx) => (
+                              <ListItem>
+                                <ListItemText
+                                  primaryTypographyProps={{
+                                    fontSize: isMobile ? "15px" : "20px",
+                                  }}
+                                  primary={t(advantage)}
+                                />
+                              </ListItem>
+                            ))}
+                          </List>
+                        </Box>
                       </Box>
-                    </Box>
-                  </Grid>
+                    </Grid>
+                  </Box>
                   {/* Decorative Divider */}
-                  {index === systemTypes.length - 2 && (
+                  {/* {index === systemTypes.length - 2 && (
                     <Box
                       sx={{
                         width: "100%",
@@ -500,7 +505,6 @@ const Product = () => {
                         px: "0.5rem",
                       }}
                     >
-                      {/* Text Section */}
                       <Box
                         sx={{
                           width: "65%",
@@ -562,7 +566,7 @@ const Product = () => {
                         </Button>
                       </Box>
                     </Box>
-                  )}
+                  )} */}
                 </Grid>
               </Box>
             </Box>
