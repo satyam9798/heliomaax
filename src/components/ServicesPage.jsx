@@ -9,7 +9,6 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/material";
-import { styled } from "@mui/material/styles";
 
 import Kusum from "../assets/kusumYojana.png";
 import Bijli from "../assets/muftBijli.png";
@@ -34,6 +33,7 @@ import {
   SubsidyGov,
 } from "../constants/images.js";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   {
@@ -185,6 +185,7 @@ const Services = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { t } = useTranslation();
+  const navigate= useNavigate();
 
   const carouselRef = useRef();
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -216,14 +217,29 @@ const Services = () => {
     }
   };
 
+  // useEffect(() => {
+  //   if (carouselRef.current) {
+  //     handleScroll();
+  //     carouselRef.current.addEventListener("scroll", handleScroll);
+  //   }
+  //   return () => {
+  //     if (carouselRef.current) {
+  //       carouselRef.current.removeEventListener("scroll", handleScroll);
+  //     }
+  //   };
+  // }, []);
+
   useEffect(() => {
-    if (carouselRef.current) {
+    const carouselNode = carouselRef.current; // Store the current value in a variable
+  
+    if (carouselNode) {
       handleScroll();
-      carouselRef.current.addEventListener("scroll", handleScroll);
+      carouselNode.addEventListener("scroll", handleScroll);
     }
+  
     return () => {
-      if (carouselRef.current) {
-        carouselRef.current.removeEventListener("scroll", handleScroll);
+      if (carouselNode) {
+        carouselNode.removeEventListener("scroll", handleScroll);
       }
     };
   }, []);
@@ -419,8 +435,7 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
-                    href='/get-quote'
-                  >
+                    onClick={() => navigate("/get-quote")}                  >
                     {t("get_quote")}
                     <MdKeyboardArrowRight />
                   </Button>
@@ -471,8 +486,6 @@ const Services = () => {
             <Box
               key={index}
               sx={{
-                padding: "10px",
-                // height: isMobile ? "52.5rem" : "28rem",
                 backgroundColor: item.bgColor,
                 padding: "20px",
                 borderRadius: "30px",
@@ -533,6 +546,24 @@ const Services = () => {
                   >
                     {t(item.description)}
                   </Typography>
+                  <Button
+                    variant='contained'
+                    sx={{
+                      backgroundColor: "#80ED99",
+                      width: "8rem",
+                      margin: "auto",
+                      my:'0.5rem',
+                      color: "#000000",
+                      fontWeight: "700",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#6CCD85",
+                      },
+                    }}
+                    onClick={() => navigate("/get-quote")}
+                  >
+                    {t("get_quote")} <MdKeyboardArrowRight />
+                  </Button>
                 </Grid>
               </Grid>
             </Box>
@@ -613,8 +644,7 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
-                    href='/get-quote'
-                  >
+                    onClick={() => navigate("/get-quote")}                  >
                     {t("get_quote")} <MdKeyboardArrowRight />
                   </Button>
                 </Box>
@@ -796,8 +826,7 @@ const Services = () => {
                         backgroundColor: "#6CCD85",
                       },
                     }}
-                    href='/get-quote'
-                  >
+                    onClick={() => navigate("/get-quote")}                  >
                     {t("get_quote")} <MdKeyboardArrowRight />
                   </Button>
                 </Box>
@@ -1019,46 +1048,46 @@ const Services = () => {
     </Box>
   );
 };
-const Container = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(2),
-  maxWidth: "90vw",
-  margin: "auto",
-}));
+// const Container = styled(Box)(({ theme }) => ({
+//   padding: theme.spacing(2),
+//   maxWidth: "90vw",
+//   margin: "auto",
+// }));
 
-const Header = styled(Box)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: theme.spacing(2),
-}));
+// const Header = styled(Box)(({ theme }) => ({
+//   display: "flex",
+//   justifyContent: "space-between",
+//   alignItems: "center",
+//   marginBottom: theme.spacing(2),
+// }));
 
-const Content = styled(Box)(({ theme }) => ({
-  display: "flex",
-  overflowX: "hidden",
-  scrollBehavior: "smooth",
-}));
+// const Content = styled(Box)(({ theme }) => ({
+//   display: "flex",
+//   overflowX: "hidden",
+//   scrollBehavior: "smooth",
+// }));
 
-const CarouselItem = styled(Box)(({ theme }) => ({
-  minWidth: "250px",
-  maxWidth: "250px",
-  marginRight: theme.spacing(2),
-  borderRadius: "0.5rem",
-  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-  backgroundColor: "#f5f5f5",
-  padding: theme.spacing(2),
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  textAlign: "center",
-}));
+// const CarouselItem = styled(Box)(({ theme }) => ({
+//   minWidth: "250px",
+//   maxWidth: "250px",
+//   marginRight: theme.spacing(2),
+//   borderRadius: "0.5rem",
+//   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+//   backgroundColor: "#f5f5f5",
+//   padding: theme.spacing(2),
+//   display: "flex",
+//   flexDirection: "column",
+//   alignItems: "center",
+//   textAlign: "center",
+// }));
 
-const ImageBox = styled(Box)(({ theme }) => ({
-  width: "100%",
-  height: "150px",
-  borderRadius: "0.5rem",
-  marginBottom: theme.spacing(2),
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-}));
+// const ImageBox = styled(Box)(({ theme }) => ({
+//   width: "100%",
+//   height: "150px",
+//   borderRadius: "0.5rem",
+//   marginBottom: theme.spacing(2),
+//   backgroundSize: "cover",
+//   backgroundPosition: "center",
+// }));
 
 export default Services;

@@ -75,8 +75,8 @@ const ContactUs = () => {
 
     try {
       await emailjs.send(
-        "service_0qqvdpi",
-        "template_2m80zuy",
+        "service_2wuul2m",
+        "template_ktyvfbj",
         {
           to_email: "mailtosatyamshivam@gmail.com",
           from_name: formData.name,
@@ -84,7 +84,7 @@ const ContactUs = () => {
           phone: formData.phone,
           message: formData.message,
         },
-        "O2fqAR580jrXQXYvy"
+        "Nu3r_ezUzYgZsawmK"
       );
 
       setFormData({ name: "", phone: "", email: "", message: "" });

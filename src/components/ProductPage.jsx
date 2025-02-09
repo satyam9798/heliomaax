@@ -18,11 +18,13 @@ import HowOffGrid from "../assets/howOffGrid.png";
 import HowHybrid from "../assets/howHybrid.png";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { t } = useTranslation();
+  const navigate= useNavigate();
 
   const content = [
     {
@@ -372,8 +374,7 @@ const Product = () => {
                   backgroundColor: "#6CCD85",
                 },
               }}
-              href='/get-quote'
-            >
+              onClick={() => navigate("/get-quote")}            >
               {t("get_quote")} <MdKeyboardArrowRight />
             </Button>
           </Box>

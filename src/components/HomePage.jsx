@@ -39,6 +39,7 @@ import {
   RooftopSolarExample,
   SolarEnergy,
 } from "../constants/images";
+import { useNavigate } from "react-router-dom";
 
 const carouselItems = [
   {
@@ -175,6 +176,7 @@ const content = [
 export default function Home() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <div className='home-container'>
@@ -262,7 +264,7 @@ export default function Home() {
               <Button
                 variant='contained'
                 style={style.carouselButton}
-                href={item.linkTo}
+                onClick={() => navigate(item.linkTo)} 
               >
                 {t("learn_more")} <MdKeyboardArrowRight />
               </Button>
@@ -689,8 +691,7 @@ export default function Home() {
                   backgroundColor: "#6CCD85",
                 },
               }}
-              href='/get-quote'
-            >
+              onClick={() => navigate("/get-quote")}            >
               {t("get_quote")} <MdKeyboardArrowRight />
             </Button>
           </Box>

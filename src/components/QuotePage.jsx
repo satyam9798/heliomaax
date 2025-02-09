@@ -96,8 +96,8 @@ const Quote = () => {
     setSubmitting(true);
     try {
       await emailjs.send(
-        "service_0qqvdpi",
-        "template_c5yvpd5",
+        "service_2wuul2m",
+        "template_auk16e7",
         {
           to_email: "mailtosatyamshivam@gmail.com",
           from_name: formData.name,
@@ -115,7 +115,7 @@ const Quote = () => {
           Power requirement: ${emailData.powerRequirement}
         `,
         },
-        "O2fqAR580jrXQXYvy"
+        "Nu3r_ezUzYgZsawmK"
       );
       alert("Message sent successfully!");
     } catch (error) {

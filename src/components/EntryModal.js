@@ -40,8 +40,8 @@ export const EntryModal = () => {
     event.preventDefault();
     try {
       await emailjs.send(
-        "service_0qqvdpi",
-        "template_2m80zuy",
+        "service_2wuul2m",
+        "template_ktyvfbj",
         {
           to_email: "mailtosatyamshivam@gmail.com",
           from_name: formData.name,
@@ -50,7 +50,7 @@ export const EntryModal = () => {
           pincode: formData.pincode,
           message: `Hey, my name is ${formData.name}. Please contact me on my email: ${formData.email} or phone ${formData.phone}. My pincode is ${formData.pincode}`,
         },
-        "O2fqAR580jrXQXYvy"
+        "Nu3r_ezUzYgZsawmK"
       );
       sessionStorage.setItem("hasSeenPopup", "true");
       setIsPopupOpen(false);

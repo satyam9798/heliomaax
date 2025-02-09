@@ -1,9 +1,11 @@
 import React from "react";
 import { Grid, Typography, Link, Box, IconButton } from "@mui/material";
-import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+import { Facebook, Twitter, Instagram } from "@mui/icons-material";
 import { BsYoutube } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate= useNavigate();
   return (
     <Box sx={{ backgroundColor: "#22577A", color: "white", padding: "40px 0", zIndex: 1,maxWidth:'100vw',overflowX:'hidden' }}>
 
@@ -14,27 +16,27 @@ const Footer = () => {
           </Typography>
           <ul style={{ padding: 0, listStyle: "none" }}>
             <li>
-              <Link href="/about-us" color="inherit" underline="none">
+              <Link onClick={() => navigate("/about-us")} color="inherit" underline="none">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact-us" color="inherit" underline="none">
+              <Link onClick={() => navigate("/contact-us")} color="inherit" underline="none">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link href="get-quote" color="inherit" underline="none">
+              <Link onClick={() => navigate("/get-quote")}  color="inherit" underline="none">
                 Get Quote
               </Link>
             </li>
             <li>
-              <Link href="/services" color="inherit" underline="none">
+              <Link onClick={() => navigate("/services")}  color="inherit" underline="none">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/products" color="inherit" underline="none">
+              <Link onClick={() => navigate("/products")} color="inherit" underline="none">
                 Product
               </Link>
             </li>
@@ -47,22 +49,22 @@ const Footer = () => {
           </Typography>
           <ul style={{ padding: 0, listStyle: "none" }}>
             <li>
-              <Link href="/products" color="inherit" underline="none">
+              <Link onClick={() => navigate("/products")} color="inherit" underline="none">
                 Products
               </Link>
             </li>
             <li>
-              <Link href="/services" color="inherit" underline="none">
+              <Link onClick={() => navigate("/services")}  color="inherit" underline="none">
                 Goverment Schemes
               </Link>
             </li>
             <li>
-              <Link href="/services" color="inherit" underline="none">
+              <Link onClick={() => navigate("/services")}  color="inherit" underline="none">
                 Bank Finance
               </Link>
             </li>
             <li>
-              <Link href="/services" color="inherit" underline="none">
+              <Link onClick={() => navigate("/services")}  color="inherit" underline="none">
                 Services
               </Link>
             </li>
